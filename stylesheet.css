@@ -1,0 +1,115 @@
+/* --- GENERAL STYLING --- */
+body {
+    margin: 0px;
+}
+* {
+    box-sizing: border-box;
+}
+/* --- GRID LAYOUT --- */
+
+/* BODY */
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 85vh 5vh;
+    grid-template-areas: "header" "article" "footer";
+}
+
+/* PRINCIPAL */
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:    "entradas-snacks fritos tartas-pastas carnes"
+                            "guisos-sopas vegetariano salsas pasteleria-postres";
+    margin: 1%;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    opacity: 0.8;
+}
+.platos {
+    position: relative;
+    border-radius: 2%; 
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.platos2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 2%;
+    height: 100%;
+}
+.foto {
+    height: 90%;
+    width: 90%;
+    border-radius: 2%;
+}
+.titulo-foto {
+    position: absolute;
+    left: 50;
+    bottom: 0;
+    margin: 0;
+    padding: 0.5%;
+    color: black;
+}
+.entradas-snacks {
+    grid-area: entradas-snacks;
+    background-color: blue;
+}
+.fritos {
+    grid-area: fritos;
+    background-color: blueviolet;
+}
+.tartas-pastas {
+    grid-area: tartas-pastas;
+    background-color: brown;
+}
+.carnes {
+    grid-area: carnes;
+    background-color: burlywood;
+}
+.guisos-sopas {
+    grid-area: guisos-sopas;
+    background-color: cadetblue;
+}
+.vegetariano {
+    grid-area: vegetariano;
+    background-color: chartreuse;
+}
+.salsas {
+    grid-area: salsas;
+    background-color: chocolate;
+}
+.pasteleria-postres {
+    grid-area: pasteleria-postres;
+    background-color: coral;
+}
+
+/* --- HEADER --- */
+header {
+    display: flex;
+}
+.logo {
+    width: 30%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+nav {
+    width: 70%;
+    border-bottom: 1px solid black;
+}
+
+
+/* --- PRINCIPAL ---*/
+
+/* --- FOOTER --- */
+footer {
+    border-top: 1px solid black;
+}
