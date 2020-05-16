@@ -1,0 +1,156 @@
+/* --- SPECIFIC GRID LAYOUT ---*/
+
+/* DESKTOP */
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:    "header" 
+                            "article"
+                            "article"
+                            "footer";
+}
+
+
+/* TABLET */
+
+/* MOBILE */
+
+
+
+
+
+
+
+/* --- HEADER --- */
+.logo {
+    width: 20%;
+}
+nav {
+    width: 80%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav > ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+nav li {
+    display: inline-block;
+    padding: 10px 0;
+    margin-left: 20px;
+
+    position: relative;
+}
+nav > ul > li > a::before {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: black;
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+    
+    transition: all ease-in-out 300ms;
+}
+
+nav > ul > li > a:hover::before {
+    width: 100%;
+}
+
+/* --- RECETAS --- */
+
+/* GRID  DESKTOP*/
+.receta {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-template-rows: 2fr 4fr 2fr;
+    grid-template-areas:    "foto-receta titulo-receta"
+                            "ingredientes pasos"
+                            "tips tips";
+    gap: 2%;
+    margin: 1%;
+    padding: 2%;
+    background-color: rgb(219, 219, 219);
+    border-radius: 1%;
+}
+.foto-receta {
+    grid-area: foto-receta;
+    background-color: white;
+    border-radius: 2%;
+}
+.foto-receta > img {
+    width: 90%;
+}
+.titulo-receta {
+    grid-area: titulo-receta;
+    background-color: white;
+    border-radius: 2%;
+}
+.ingredientes {
+    grid-area: ingredientes;
+    background-color: white;
+    border-radius: 2%;
+}
+.pasos {
+    grid-area: pasos;
+    background-color: white;
+    border-radius: 2%;
+}
+.tips {
+    grid-area: tips;
+    background-color: white;
+    border-radius: 2%;
+}
+
+/* GRID MOBILE */
+@media (min-width:0px) and (max-width:767px) {
+    .receta {
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:    "foto-receta"
+                                "titulo-receta"
+                                "ingredientes" 
+                                "pasos"
+                                "tips";
+        gap: 2%;
+        margin: 1%;
+        padding: 1%;
+        background-color: rgb(219, 219, 219);
+        border-radius: 1%;
+    }
+}
+
+/* TABLA INGREDIENTES */
+table {
+    width: 90%;
+    margin: 10% 5%;
+    border-collapse: collapse;
+}
+td {
+    border-bottom: 1px solid black;
+    padding: 1%;
+}
+tr:nth-child(odd) {
+    background-color: rgb(192, 192, 192);
+}
+tr:hover {
+    opacity: 0.8;
+}
+
+/* PREPARACIÓN */
+.pasos > p {
+    text-align: left;
+    line-height: 1.3;
+    letter-spacing: 1.2;
+    word-spacing: 1px;
+    text-indent: 50px;
+}

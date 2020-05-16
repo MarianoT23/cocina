@@ -1,12 +1,18 @@
 /* --- GENERAL STYLING --- */
 body {
     margin: 0px;
+    font-family: 'Balsamiq Sans', cursive;
+    color: black;
 }
 * {
     box-sizing: border-box;
 }
-
-
+a {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
 
 
 /* --- GRID LAYOUT DESKTOP --- */
@@ -20,19 +26,19 @@ body {
 }
 
 /* PRINCIPAL */
-article {
+.init {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas:    "entradas-snacks fritos tartas-pastas carnes"
-                            "guisos-sopas vegetariano salsas panes-postres";
+    grid-template-areas:    "entradas-snacks panes tartas-pastas carnes"
+                            "guisos-sopas vegetariano salsas postres";
     margin: 1%;
 }
 .entradas-snacks {
     grid-area: entradas-snacks;
 }
-.fritos {
-    grid-area: fritos;
+.panes {
+    grid-area: panes;
 }
 .tartas-pastas {
     grid-area: tartas-pastas;
@@ -49,22 +55,29 @@ article {
 .salsas {
     grid-area: salsas;
 }
-.panes-postres {
-    grid-area: panes-postres;
+.postres {
+    grid-area: postres;
 }
+
 
 
 /* --- GRID LAYOUT TABLET --- */
 
 @media (min-width:768px) and (max-width:992px) {
-    article {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "header" "article" "footer";
+    }
+    .init {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-areas:    "entradas-snacks fritos"
+        grid-template-areas:    "entradas-snacks panes"
                                 "tartas-pastas carnes"
                                 "guisos-sopas vegetariano" 
-                                "salsas panes-postres";
+                                "salsas postres";
         margin: 1%;
     }
 }
@@ -72,24 +85,27 @@ article {
 /* --- GRID LAYOUT MOBILE --- */
 
 @media (min-width:0px) and (max-width:767px) {
-    article {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "header" "article" "footer";
+    }
+    .init {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         grid-template-areas:    "entradas-snacks"
-                                "fritos" 
+                                "panes" 
                                 "tartas-pastas" 
                                 "carnes"
                                 "guisos-sopas" 
                                 "vegetariano" 
                                 "salsas" 
-                                "panes-postres";
+                                "postres";
         margin: 1%;
     }
 }
-
-
-
 
 
 
@@ -100,16 +116,18 @@ article {
 
 /* --- HEADER --- */
 header {
-    display: flex;
     background-color: rgb(192, 192, 192);
+    display: flex;
 }
 .logo {
-    width: 30%;
+    width: 40%;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
+    font-size: 2em;
+    text-align: center;
 }
 nav {
-    width: 70%;
+    width: 60%;
     border-bottom: 1px solid black;
 }
 
@@ -145,11 +163,9 @@ nav {
     padding: 0.5%;
     color: black;
 }
-a {
-    text-decoration: none;
-}
-a:hover {
-    opacity: 0.8;
+.platos:hover {
+    opacity: 0.7;
+    transition: all ease-in-out 600ms;
 }
 
 /* --- FOOTER --- */
