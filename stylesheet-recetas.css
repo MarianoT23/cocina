@@ -7,10 +7,8 @@ body {
     grid-template-rows: auto;
     grid-template-areas:    "header" 
                             "article"
-                            "article"
                             "footer";
 }
-
 
 /* TABLET */
 
@@ -63,6 +61,45 @@ nav > ul > li > a:hover::before {
     width: 100%;
 }
 
+/* --- NAV RECETAS --- */
+
+.menu-receta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+.carta-receta {
+    width: 20%;
+    margin: 2%;
+    box-shadow: 5px 5px 50px black;
+}
+.carta-receta img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.carta-receta > a {
+    color: white;
+}
+.titulo-carta {
+    text-align: left;
+    padding: 10px;
+}
+.boton-carta {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+}
+.boton-carta:hover {
+    background-color: red;
+    transition: 300ms;
+}
+
+
+
 /* --- RECETAS --- */
 
 /* GRID  DESKTOP*/
@@ -76,9 +113,10 @@ nav > ul > li > a:hover::before {
                             "tips tips";
     gap: 2%;
     margin: 1%;
-    padding: 2%;
+    padding: 4%;
     background-color: rgb(219, 219, 219);
     border-radius: 1%;
+    font-family: 'Roboto', sans-serif;
 }
 .foto-receta {
     grid-area: foto-receta;
@@ -87,26 +125,31 @@ nav > ul > li > a:hover::before {
 }
 .foto-receta > img {
     width: 90%;
+    padding: 2%;
 }
 .titulo-receta {
     grid-area: titulo-receta;
     background-color: white;
     border-radius: 2%;
+    padding: 2%;
 }
 .ingredientes {
     grid-area: ingredientes;
     background-color: white;
     border-radius: 2%;
+    padding: 2%;
 }
 .pasos {
     grid-area: pasos;
     background-color: white;
     border-radius: 2%;
+    padding: 2%;
 }
 .tips {
     grid-area: tips;
     background-color: white;
     border-radius: 2%;
+    padding: 2%;
 }
 
 /* GRID MOBILE */
@@ -152,5 +195,4 @@ tr:hover {
     line-height: 1.3;
     letter-spacing: 1.2;
     word-spacing: 1px;
-    text-indent: 50px;
 }
