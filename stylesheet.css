@@ -1,30 +1,64 @@
-/* --- GENERAL STYLING --- */
+   
+   /* TABLA DE CONTENIDOS 
+    1. GENERAL STYLING
+    2. GRID LAYOUT
+        2.1 DESKTOP
+        2.2 TABLET 
+        2.3 MOBILE
+    3. SPECIFIC STYLING
+        3.1 HEADER
+        3.2 PRINCIPAL
+        3.3 DE QUE SE TRATA
+        3.4 NUESTROS CHEFS
+    4. FOOTER
+    */
+
+    
+
+/* ------------------ 
+1. GENERAL STYLING 
+------------------ */
 body {
     margin: 0px;
-    font-family: 'Balsamiq Sans', cursive;
-    color: black;
+    font-family: 'Pangolin', cursive;
+    color: rgb(0, 0, 0);
 }
 * {
     box-sizing: border-box;
 }
 a {
     text-decoration: none;
-    color: black;
+    color: inherit;
 }
 a:visited {
     text-decoration: none;
-    color: black;
+    color: inherit;
 }
 
 
-/* --- GRID LAYOUT DESKTOP --- */
+
+/* ----------- 
+2. GRID LAYOUT 
+------------ */
+
+/* --- 2.1 DESKTOP --- */
 
 /* BODY */
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10vh 85vh 5vh;
-    grid-template-areas: "header" "article" "footer";
+    grid-template-rows: 10vh 90vh 100vh auto auto;
+    grid-template-areas:    "header" 
+                            "article"
+                            "article2"
+                            "article3"
+                            "footer";
+}
+.article2 {
+    grid-area: article2;
+}
+.article3 {
+    grid-area: article3;
 }
 
 /* PRINCIPAL */
@@ -34,7 +68,6 @@ body {
     grid-template-rows: 1fr 1fr;
     grid-template-areas:    "entradas-snacks panes tartas-pastas carnes"
                             "guisos-sopas vegetariano salsas postres";
-    margin: 1%;
 }
 .entradas-snacks {
     grid-area: entradas-snacks;
@@ -61,9 +94,7 @@ body {
     grid-area: postres;
 }
 
-
-
-/* --- GRID LAYOUT TABLET --- */
+/* --- 2.2 GRID LAYOUT TABLET --- */
 
 @media (min-width:768px) and (max-width:992px) {
     body {
@@ -84,7 +115,7 @@ body {
     }
 }
 
-/* --- GRID LAYOUT MOBILE --- */
+/* --- 2.3 GRID LAYOUT MOBILE --- */
 
 @media (min-width:0px) and (max-width:767px) {
     body {
@@ -111,23 +142,28 @@ body {
 
 
 
+/* ---------------- 
+3. SPECIFIC STYLING 
+----------------- */
 
-
-
-
-
-/* --- HEADER --- */
+/* --- 3.1 HEADER --- */
 header {
-    background-color: rgb(192, 192, 192);
+    background: rgb(34, 33, 33);
+    color: white;
     display: flex;
 }
+/* LOGO */
 .logo {
     width: 40%;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
     font-size: 2em;
+}
+.logo h2 {
+    margin: 1% 0;
     text-align: center;
 }
+/* NAV */
 nav {
     width: 60%;
     border-bottom: 1px solid black;
@@ -167,7 +203,10 @@ nav > ul > li > a:hover::before {
 }
 
 
-/* --- PRINCIPAL ---*/
+/* --- 3.2 PRINCIPAL ---*/
+article {
+    background: rgb(240, 238, 238);
+}
 .platos {
     position: relative;
     border-radius: 2%; 
@@ -175,7 +214,6 @@ nav > ul > li > a:hover::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(192, 192, 192);
 }
 .platos2 {
     display: flex;
@@ -203,7 +241,78 @@ nav > ul > li > a:hover::before {
     transition: all ease-in-out 600ms;
 }
 
-/* --- FOOTER --- */
+/* --- 3.3 DE QUE SE TRATA --- */
+.article2 {
+    background-image: url(Fotos/emma.png);
+    background-size: cover;
+}
+
+/* --- 3.4 NUESTROS CHEFS --- */
+.article3 {
+    background: rgb(240, 238, 238);
+}
+.grid-cocinero {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:    "titulo-cocinero titulo-cocinero"
+                            "texto-cocinero foto-cocinero"
+                            "recetas-cocinero foto-cocinero";
+    margin: 20px;
+    background-color: red;
+    padding: 0.8%;
+    border-radius: 1%;
+}
+.grid-cocinero2 {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas:    "titulo-cocinero titulo-cocinero"
+                            "foto-cocinero texto-cocinero"
+                            "foto-cocinero recetas-cocinero";
+    margin: 20px;
+    background-color: red;
+    padding: 0.8%;
+    border-radius: 1%;
+}
+.titulo-cocinero {
+    grid-area: titulo-cocinero;
+    background: linear-gradient(to left, blue, green);
+    text-align: center;
+    border-bottom: 1px dashed black;
+}
+.texto-cocinero {
+    grid-area: texto-cocinero;
+    background-color: blueviolet;
+    padding: 1%;
+}
+.recetas-cocinero {
+    grid-area: recetas-cocinero;
+    background-color: brown;
+    padding: 1%;
+}
+.recetas-cocinero ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.recetas-cocinero li {
+    width: max(30%,200px);
+}
+.foto-cocinero {
+    grid-area: foto-cocinero;
+    padding: 1%;
+}
+.foto-cocinero > img {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+
+
+/* -------
+4. FOOTER
+-------- */
 footer {
     border-top: 1px solid black;
     background-color: rgb(192, 192, 192);

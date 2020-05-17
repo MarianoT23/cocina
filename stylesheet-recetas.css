@@ -1,6 +1,15 @@
-/* --- SPECIFIC GRID LAYOUT ---*/
 
-/* DESKTOP */
+/* TABLA DE CONTENIDOS 
+1.
+2.
+3.
+*/
+
+
+/* ----------------
+1. SPECIFIC GRID LAYOUT
+-------------------*/
+
 body {
     display: grid;
     grid-template-columns: 1fr;
@@ -10,17 +19,11 @@ body {
                             "footer";
 }
 
-/* TABLET */
-
-/* MOBILE */
 
 
-
-
-
-
-
-/* --- HEADER --- */
+/* --- 
+HEADER 
+--- */
 .logo {
     width: 20%;
 }
@@ -30,6 +33,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 nav > ul {
     width: 100%;
@@ -38,7 +42,7 @@ nav > ul {
 }
 nav li {
     display: inline-block;
-    padding: 10px 0;
+    padding: 10px 0 2% 0;
     margin-left: 20px;
 
     position: relative;
@@ -61,7 +65,19 @@ nav > ul > li > a:hover::before {
     width: 100%;
 }
 
-/* --- NAV RECETAS --- */
+@media (min-width:0px) and (max-width:767px) {
+    nav {
+        display: none;
+    }
+    .logo {
+        width: 100%;
+    }
+}
+
+
+/* -------- 
+NAV RECETAS 
+---------- */
 
 .menu-receta {
     display: flex;
@@ -71,7 +87,7 @@ nav > ul > li > a:hover::before {
     font-family: 'Roboto', sans-serif;
 }
 .carta-receta {
-    width: 20%;
+    width: max(20%, 250px);
     margin: 2%;
     box-shadow: 5px 5px 50px black;
 }
@@ -85,7 +101,8 @@ nav > ul > li > a:hover::before {
 }
 .titulo-carta {
     text-align: left;
-    padding: 10px;
+    padding: 5px;
+    margin-left: 10px;
 }
 .boton-carta {
     text-transform: uppercase;
@@ -170,9 +187,13 @@ nav > ul > li > a:hover::before {
         background-color: rgb(219, 219, 219);
         border-radius: 1%;
     }
+    .foto-receta {
+        display: none;
+    }
 }
 
 /* FOTO RECETA */
+
 
 /* TABLA INGREDIENTES */
 table {
