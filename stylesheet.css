@@ -18,6 +18,9 @@
 /* ------------------ 
 1. GENERAL STYLING 
 ------------------ */
+html {
+    scroll-behavior: smooth;
+  }
 body {
     margin: 0px;
     font-family: 'Pangolin', cursive;
@@ -190,7 +193,7 @@ nav > ul > li > a::before {
     display: block;
     height: 5px;
     width: 100%;
-    background-color: black;
+    background-color: white;
 
     position: absolute;
     top: 0;
@@ -214,6 +217,7 @@ article {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgb(224, 222, 222);
 }
 .platos2 {
     display: flex;
@@ -259,7 +263,7 @@ article {
                             "texto-cocinero foto-cocinero"
                             "recetas-cocinero foto-cocinero";
     margin: 20px;
-    background-color: red;
+    background: rgb(224, 222, 222);
     padding: 0.8%;
     border-radius: 1%;
 }
@@ -271,24 +275,21 @@ article {
                             "foto-cocinero texto-cocinero"
                             "foto-cocinero recetas-cocinero";
     margin: 20px;
-    background-color: red;
+    background: rgb(224, 222, 222);
     padding: 0.8%;
     border-radius: 1%;
 }
 .titulo-cocinero {
     grid-area: titulo-cocinero;
-    background: linear-gradient(to left, blue, green);
     text-align: center;
     border-bottom: 1px dashed black;
 }
 .texto-cocinero {
     grid-area: texto-cocinero;
-    background-color: blueviolet;
     padding: 1%;
 }
 .recetas-cocinero {
     grid-area: recetas-cocinero;
-    background-color: brown;
     padding: 1%;
 }
 .recetas-cocinero ul {
@@ -305,7 +306,7 @@ article {
 .foto-cocinero > img {
     width: 100%;
     border-radius: 50%;
-    border: 2px solid black;
+    box-shadow: 5px 5px 50px black;
 }
 
 

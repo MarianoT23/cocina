@@ -1,9 +1,12 @@
+    /* TABLA DE CONTENIDOS 
+    1. SPECIFIC GRID LAYOUT
+    2. HEADER
+    3. NAV RECETAS
+    4. RECETAS
+    3.
+    */
 
-/* TABLA DE CONTENIDOS 
-1.
-2.
-3.
-*/
+
 
 
 /* ----------------
@@ -21,11 +24,15 @@ body {
 
 
 
-/* --- 
-HEADER 
---- */
+/* ------- 
+2. HEADER
+-------- */
+
 .logo {
     width: 20%;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    font-size: large;
 }
 nav {
     width: 80%;
@@ -43,7 +50,7 @@ nav > ul {
 nav li {
     display: inline-block;
     padding: 10px 0 2% 0;
-    margin-left: 20px;
+    margin: 10px 0 0 20px;
 
     position: relative;
 }
@@ -52,7 +59,7 @@ nav > ul > li > a::before {
     display: block;
     height: 5px;
     width: 100%;
-    background-color: black;
+    background-color: white;
 
     position: absolute;
     top: 0;
@@ -75,9 +82,10 @@ nav > ul > li > a:hover::before {
 }
 
 
-/* -------- 
-NAV RECETAS 
----------- */
+
+/* -----------
+3. NAV RECETAS 
+------------ */
 
 .menu-receta {
     display: flex;
@@ -117,7 +125,9 @@ NAV RECETAS
 
 
 
-/* --- RECETAS --- */
+/* -------- 
+4. RECETAS 
+--------- */
 
 /* GRID  DESKTOP*/
 .receta {
@@ -131,7 +141,7 @@ NAV RECETAS
     gap: 2%;
     margin: 1%;
     padding: 4%;
-    background-color: rgb(219, 219, 219);
+    background: rgb(224, 222, 222);
     border-radius: 1%;
     font-family: 'Roboto', sans-serif;
 }
