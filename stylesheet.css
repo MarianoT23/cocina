@@ -13,8 +13,9 @@
     4. FOOTER
     */
 
-    
 
+
+    
 /* ------------------ 
 1. GENERAL STYLING 
 ------------------ */
@@ -104,7 +105,11 @@ body {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas: "header" "article" "footer";
+        grid-template-areas:    "header" 
+                                "article" 
+                                "article2"
+                                "article3"
+                                "footer";
     }
     .init {
         display: grid;
@@ -125,7 +130,11 @@ body {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas: "header" "article" "footer";
+        grid-template-areas:    "header" 
+                                "article" 
+                                "article2"
+                                "article3"
+                                "footer";
     }
     .init {
         display: grid;
@@ -154,27 +163,24 @@ header {
     background: rgb(34, 33, 33);
     color: white;
     display: flex;
+    place-items: center;
 }
 /* LOGO */
 .logo {
     width: 40%;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
     font-size: 2em;
 }
 .logo h2 {
-    margin: 1% 0;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* NAV */
 nav {
     width: 60%;
-    border-bottom: 1px solid black;
     list-style: none;
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
-    justify-content: center;
 }
 nav > ul {
     width: 100%;
@@ -279,10 +285,13 @@ article {
     padding: 0.8%;
     border-radius: 1%;
 }
+.grid-cocinero a:hover, .grid-cocinero2 a:hover {
+    color: rgb(85, 0, 221);
+}
 .titulo-cocinero {
     grid-area: titulo-cocinero;
     text-align: center;
-    border-bottom: 1px dashed black;
+    border-bottom: 0.1em dashed black;
 }
 .texto-cocinero {
     grid-area: texto-cocinero;
@@ -298,15 +307,20 @@ article {
 }
 .recetas-cocinero li {
     width: max(30%,200px);
+    text-transform: uppercase;
+}
+.recetas-cocinero > ul > li {
+    margin: 1%;
 }
 .foto-cocinero {
     grid-area: foto-cocinero;
-    padding: 1%;
+    padding: 8%;
 }
 .foto-cocinero > img {
     width: 100%;
     border-radius: 50%;
     box-shadow: 5px 5px 50px black;
+    margin-top: 3%;
 }
 
 

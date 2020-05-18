@@ -30,8 +30,6 @@ body {
 
 .logo {
     width: 20%;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
     font-size: large;
 }
 nav {
@@ -135,17 +133,17 @@ nav > ul > li > a:hover::before {
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     grid-template-rows: auto;
-    grid-template-areas:    "titulo-receta titulo-receta foto-receta"
-                            "ingredientes pasos pasos"
-                            "tips tips tips";
-    gap: 2%;
-    margin: 1%;
-    padding: 4%;
-    background: rgb(224, 222, 222);
+    grid-template-areas:    "titulo-receta titulo-receta  rinde"
+                            "ingredientes  pasos          pasos"
+                            "tips          pasos          pasos"
+                            /*"foto-receta foto-receta foto-receta"*/;
+    gap: 1%;
+    margin: 4% 6%;
+    padding: 1% 1% 2% 1%;
+    background: rgb(34, 33, 33);
     border-radius: 1%;
-    font-family: 'Roboto', sans-serif;
 }
-.foto-receta {
+/* .foto-receta {
     grid-area: foto-receta;
     background-color: white;
     border-radius: 2%;
@@ -153,30 +151,36 @@ nav > ul > li > a:hover::before {
 .foto-receta > img {
     width: 90%;
     padding: 2%;
-}
+}*/
 .titulo-receta {
     grid-area: titulo-receta;
-    background-color: white;
+    background: rgb(240, 238, 238);
     border-radius: 2%;
-    padding: 2%;
+    padding: 4%;
+}
+.rinde {
+    grid-area: rinde;
+    background: rgb(240, 238, 238);
+    border-radius: 2%;
+    padding: 4%;
 }
 .ingredientes {
     grid-area: ingredientes;
-    background-color: white;
+    background: rgb(240, 238, 238);
     border-radius: 2%;
-    padding: 2%;
+    padding: 4%;
 }
 .pasos {
     grid-area: pasos;
-    background-color: white;
+    background: rgb(240, 238, 238);
     border-radius: 2%;
-    padding: 2%;
+    padding: 4%;
 }
 .tips {
     grid-area: tips;
-    background-color: white;
+    background: rgb(240, 238, 238);
     border-radius: 2%;
-    padding: 2%;
+    padding: 4%;
 }
 
 /* GRID MOBILE */
@@ -186,8 +190,8 @@ nav > ul > li > a:hover::before {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        grid-template-areas:    "foto-receta"
-                                "titulo-receta"
+        grid-template-areas:    "titulo-receta"
+                                "rinde"
                                 "ingredientes" 
                                 "pasos"
                                 "tips";
@@ -201,6 +205,27 @@ nav > ul > li > a:hover::before {
         display: none;
     }
 }
+
+/* RECETA */
+.receta a:hover {
+    color: rgb(85, 0, 221);
+}
+.svg {
+    cursor: pointer;
+}
+
+/* RINDE */
+.rinde {
+    text-align: left;
+    padding: 4%;
+}
+.rinde img {
+    margin-right: 10px;
+}
+.rinde ul {
+    list-style: none;
+}
+
 
 /* FOTO RECETA */
 
@@ -229,32 +254,26 @@ tr:hover {
     letter-spacing: 1.2;
     word-spacing: 1px;
 }
-.consejo {
-    font-size: 0.8em;
-    opacity: 0.7;
-}
 
 /* TIPS */
-.tips {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+
+/* -------------
+BOTON RETURN TOP
+--------------*/
+#myBtn {
+    /*display: none;  Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 10px; /* Place the button at the bottom of the page */
+    right: 10px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background: rgb(34, 33, 33);
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
 }
-.tips > h2 {
-    background-color: rgb(219, 219, 219);
-    width: 100%;
-}
-.tips > h3 {
-    width: 2%;
-    margin: 1% 4%;
-    background-color: rgb(219, 219, 219);
-    border-radius: 50%;
-}
-.tips > h4 {
-    width: 90%;
-    text-align: left;
-    font-size: 1em;
+#myBtn:hover {
+    background-color: red; /* Add a dark-grey background on hover */
 }
