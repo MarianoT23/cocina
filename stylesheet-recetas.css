@@ -135,23 +135,14 @@ nav > ul > li > a:hover::before {
     grid-template-rows: auto;
     grid-template-areas:    "titulo-receta titulo-receta  rinde"
                             "ingredientes  pasos          pasos"
-                            "tips          pasos          pasos"
-                            /*"foto-receta foto-receta foto-receta"*/;
+                            "tips          pasos          pasos";
+                            
     gap: 1%;
     margin: 4% 6%;
     padding: 1% 1% 2% 1%;
     background: rgb(34, 33, 33);
     border-radius: 1%;
 }
-/* .foto-receta {
-    grid-area: foto-receta;
-    background-color: white;
-    border-radius: 2%;
-}
-.foto-receta > img {
-    width: 90%;
-    padding: 2%;
-}*/
 .titulo-receta {
     grid-area: titulo-receta;
     background: rgb(240, 238, 238);
@@ -213,6 +204,7 @@ nav > ul > li > a:hover::before {
 .svg {
     cursor: pointer;
 }
+
 
 /* RINDE */
 .rinde {
