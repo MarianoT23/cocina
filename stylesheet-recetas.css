@@ -1,9 +1,9 @@
     /* TABLA DE CONTENIDOS 
     1. SPECIFIC GRID LAYOUT
-    2. HEADER
-    3. NAV RECETAS
-    4. RECETAS
-    3.
+    2. SVG's
+    3. HEADER
+    4. NAV RECETAS
+    5. RECETAS
     */
 
 
@@ -22,10 +22,37 @@ body {
                             "footer";
 }
 
+article {
+    background: rgb(255, 255, 255);
+}
+
+
+/* ------
+2. SVG's 
+--------*/
+
+.sm-svg {
+    width: 20px;
+    height: auto;
+    margin: 15px 15px -5px 15px;
+}
+.md-svg {
+    width: 50px;
+    height: auto;
+    margin: 15px 15px -10px 15px;
+}
+.lg-svg {
+    width: 70px;
+    height: auto;
+    margin: 15px 15px -15px 15px;
+}
+.sm-svg, .md-svg, .lg-svg {
+
+}
 
 
 /* ------- 
-2. HEADER
+3. HEADER
 -------- */
 
 .logo {
@@ -83,7 +110,7 @@ nav > ul > li > a:hover::before {
 
 
 /* -----------
-3. NAV RECETAS 
+4. NAV RECETAS 
 ------------ */
 
 .menu-receta {
@@ -98,7 +125,7 @@ nav > ul > li > a:hover::before {
     margin: 2%;
     box-shadow: 5px 5px 50px black;
 }
-.carta-receta img {
+.carta-receta > div > img {
     object-fit: cover;
     width: 100%;
     height: 150px;
@@ -125,7 +152,7 @@ nav > ul > li > a:hover::before {
 
 
 /* -------- 
-4. RECETAS 
+5. RECETAS 
 --------- */
 
 /* GRID  DESKTOP*/
@@ -138,40 +165,35 @@ nav > ul > li > a:hover::before {
                             "ingredientes  pasos          pasos"
                             "tips          pasos          pasos";
                             
-    gap: 1%;
+    gap: 7px;
     margin: 4% 6%;
-    padding: 1% 1% 2% 1%;
+    padding: 10px;
     background: rgb(34, 33, 33);
     border-radius: 1%;
 }
 .titulo-receta {
     grid-area: titulo-receta;
     background: rgb(240, 238, 238);
-    border-radius: 2%;
     padding: 4%;
 }
 .rinde {
     grid-area: rinde;
     background: rgb(240, 238, 238);
-    border-radius: 2%;
-    padding: 4%;
+
 }
 .ingredientes {
     grid-area: ingredientes;
     background: rgb(240, 238, 238);
-    border-radius: 2%;
     padding: 4%;
 }
 .pasos {
     grid-area: pasos;
     background: rgb(240, 238, 238);
-    border-radius: 2%;
     padding: 4%;
 }
 .tips {
     grid-area: tips;
     background: rgb(240, 238, 238);
-    border-radius: 2%;
     padding: 4%;
 }
 
@@ -202,10 +224,25 @@ nav > ul > li > a:hover::before {
 .receta a:hover {
     color: rgb(85, 0, 221);
 }
+.receta {
+    font-size: 1.1em;
+}
+.receta h2 {
+    color: rgb(219, 124, 47);
+}
+.receta p {
+    margin: 30px 0;
+    text-align: justify;
+}
 .svg {
     cursor: pointer;
 }
 
+/* TÍTULO RECETA*/
+.titulo-receta h2 {
+    font-size: 2.5em;
+    margin: 10px;
+}
 
 /* RINDE */
 .rinde {
@@ -218,9 +255,12 @@ nav > ul > li > a:hover::before {
 .rinde ul {
     list-style: none;
 }
-
-
-/* FOTO RECETA */
+.rinde h4 {
+    margin: 15px 0;
+}
+.rinde h5 {
+    margin: 10px 0;
+}
 
 
 /* TABLA INGREDIENTES */
@@ -243,7 +283,7 @@ tr:hover {
 /* PREPARACIÓN */
 .pasos > p {
     text-align: left;
-    line-height: 1.3;
+    line-height: 1.4;
     letter-spacing: 1.2;
     word-spacing: 1px;
 }
@@ -261,7 +301,8 @@ BOTON RETURN TOP
     z-index: 99; /* Make sure it does not overlap */
     border: none; /* Remove borders */
     outline: none; /* Remove outline */
-    background: rgb(34, 33, 33);
+    background: rgb(240, 238, 238);
+    border: 0.5px solid rgb(77, 77, 77);
     cursor: pointer; /* Add a mouse pointer on hover */
     padding: 15px; /* Some padding */
     border-radius: 10px; /* Rounded corners */
