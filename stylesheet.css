@@ -12,6 +12,7 @@
         3.3 DE QUE SE TRATA - FORM
         3.4 NUESTROS CHEFS 
     4. FOOTER
+    5. SVG's
     */
 
 
@@ -234,9 +235,7 @@ nav > ul > li > a:hover::before {
 
 
 /* --- 3.2 PRINCIPAL ---*/
-article {
-    background: rgb(240, 238, 238);
-}
+
 .platos {
     position: relative;
     border-radius: 2%; 
@@ -244,7 +243,7 @@ article {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(224, 222, 222);
+    background: rgb(240, 238, 238);
 }
 .platos2 {
     display: flex;
@@ -257,7 +256,6 @@ article {
 .foto {
     height: 90%;
     width: 90%;
-    border-radius: 2%;
 }
 .titulo-foto {
     position: absolute;
@@ -281,7 +279,6 @@ article {
     grid-template-rows: auto;
     grid-template-areas:    "que-trata que-trata trata-foto-1"
                             "trata-foto-2 form-receta form-receta";
-    gap: 10px;
     color: white;
     place-items: center;
 }
@@ -299,8 +296,6 @@ article {
 }
 .article2 > div > img {
     width: 500px;
-    border-radius: 2%;
-    padding: 2%;
 }
 .article2 ul {
     list-style: none;
@@ -328,9 +323,7 @@ form  li {
 
 
 /* --- 3.4 NUESTROS CHEFS --- */
-.article3 {
-    background: rgb(240, 238, 238);
-}
+
 .grid-cocinero {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -339,19 +332,20 @@ form  li {
                             "texto-cocinero foto-cocinero"
                             "recetas-cocinero foto-cocinero";
     margin: 20px;
-    background: rgb(224, 222, 222);
+    background: rgb(240, 238, 238);
     padding: 0.8%;
     border-radius: 1%;
 }
 .grid-cocinero2 {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 2fr 4fr;
     grid-template-rows: auto;
     grid-template-areas:    "titulo-cocinero titulo-cocinero"
-                            "foto-cocinero texto-cocinero"
-                            "foto-cocinero recetas-cocinero";
+                            "foto-cocinero recetas-cocinero"
+                            "texto-cocinero recetas-cocinero";
     margin: 20px;
-    background: rgb(224, 222, 222);
+    column-gap: 3%;
+    background: rgb(240, 238, 238);
     padding: 0.8%;
     border-radius: 1%;
 }
@@ -362,6 +356,7 @@ form  li {
     grid-area: titulo-cocinero;
     text-align: center;
     border-bottom: 0.1em dashed black;
+    background: rgb(221, 218, 218);
 }
 .texto-cocinero {
     grid-area: texto-cocinero;
@@ -370,6 +365,7 @@ form  li {
 .recetas-cocinero {
     grid-area: recetas-cocinero;
     padding: 1%;
+    font-size: 1.1em;
 }
 .recetas-cocinero ul {
     display: flex;
@@ -392,6 +388,9 @@ form  li {
     box-shadow: 5px 5px 50px black;
     margin-top: 3%;
 }
+.cocinero-svg {
+    margin: 0 5% -10px 5%;
+}
 
 /* -------
 4. FOOTER
@@ -399,4 +398,21 @@ form  li {
 footer {
     border-top: 1px solid black;
     background-color: rgb(192, 192, 192);
+}
+
+/* ------
+5. SVG's 
+--------*/
+
+.sm-svg {
+    width: 20px;
+    height: auto;
+}
+.md-svg {
+    width: 50px;
+    height: auto;
+}
+.lg-svg {
+    width: 70px;
+    height: auto;
 }

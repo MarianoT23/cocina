@@ -46,9 +46,6 @@ article {
     height: auto;
     margin: 15px 15px -15px 15px;
 }
-.sm-svg, .md-svg, .lg-svg {
-
-}
 
 
 /* ------- 
@@ -128,7 +125,7 @@ nav > ul > li > a:hover::before {
 .carta-receta > div > img {
     object-fit: cover;
     width: 100%;
-    height: 150px;
+    height: 170px;
 }
 .carta-receta > a {
     color: white;
@@ -136,13 +133,22 @@ nav > ul > li > a:hover::before {
 .titulo-carta {
     text-align: left;
     margin-left: 10px;
-    height: 100px;
+    height: 85px;
+}
+.titulo-carta h3 {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.titulo-carta h5, .titulo-carta .sm-svg {
+    margin-top: 5px;
+    margin-right: 0;
 }
 .boton-carta {
     text-transform: uppercase;
     text-align: center;
+    font-weight: bold;
     padding: 10px;
-    background-color: black;
+    background: rgb(27, 27, 27);
 }
 .boton-carta:hover {
     background-color: red;
@@ -209,10 +215,9 @@ nav > ul > li > a:hover::before {
                                 "ingredientes" 
                                 "pasos"
                                 "tips";
-        gap: 2%;
-        margin: 1%;
+        gap: 0.;
+        margin: 4% 1%;
         padding: 1%;
-        background-color: rgb(219, 219, 219);
         border-radius: 1%;
     }
     .foto-receta {
@@ -242,6 +247,15 @@ nav > ul > li > a:hover::before {
 .titulo-receta h2 {
     font-size: 2.5em;
     margin: 10px;
+}
+@media (min-width:0px) and (max-width:767px) {
+    .titulo-receta h2 {
+        font-size: 1.5em;
+
+    }
+    .titulo-receta h3 {
+        font-size: 1em;
+    }
 }
 
 /* RINDE */
@@ -286,6 +300,10 @@ tr:hover {
     line-height: 1.4;
     letter-spacing: 1.2;
     word-spacing: 1px;
+}
+.pasos h2 {
+    margin: 10px 0 50px 0;
+    font-size: 2em;
 }
 
 /* TIPS */
