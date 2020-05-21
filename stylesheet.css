@@ -9,8 +9,8 @@
     3. SPECIFIC STYLING
         3.1 HEADER
         3.2 PRINCIPAL
-        3.3 DE QUE SE TRATA
-        3.4 NUESTROS CHEFS
+        3.3 DE QUE SE TRATA - FORM
+        3.4 NUESTROS CHEFS 
     4. FOOTER
     */
 
@@ -72,7 +72,7 @@ a:visited {
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10vh 90vh 100vh auto auto;
+    grid-template-rows: 10vh 90vh auto auto auto;
     grid-template-areas:    "header" 
                             "article"
                             "article2"
@@ -274,9 +274,43 @@ article {
 
 /* --- 3.3 DE QUE SE TRATA --- */
 .article2 {
-    background-image: url(Fotos/emma.png);
+    background: rgb(34, 33, 33);
     background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:    "que-trata trata-foto-1"
+                            "trata-foto-2 form-receta";
+    gap: 10px;
+    color: white;
+    place-items: center;
 }
+.que-trata {
+    grid-area: que-trata;
+}
+.form-receta {
+    grid-area: form-receta;
+}
+.trata-foto-1 {
+    grid-area: trata-foto-1;
+}
+.trata-foto-2 {
+    grid-area: trata-foto-2;
+}
+.article2 > div > img {
+    width: 500px;
+}
+.article2 ul {
+    list-style: none;
+}
+.form-receta {
+    background-color: aliceblue;
+    color: black;
+}
+form  li {
+    padding: 10px;
+}
+
 
 /* --- 3.4 NUESTROS CHEFS --- */
 .article3 {
@@ -343,8 +377,6 @@ article {
     box-shadow: 5px 5px 50px black;
     margin-top: 3%;
 }
-
-
 
 /* -------
 4. FOOTER
