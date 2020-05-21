@@ -277,10 +277,10 @@ article {
     background: rgb(34, 33, 33);
     background-size: cover;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas:    "que-trata trata-foto-1"
-                            "trata-foto-2 form-receta";
+    grid-template-areas:    "que-trata que-trata trata-foto-1"
+                            "trata-foto-2 form-receta form-receta";
     gap: 10px;
     color: white;
     place-items: center;
@@ -299,16 +299,31 @@ article {
 }
 .article2 > div > img {
     width: 500px;
+    border-radius: 2%;
+    padding: 2%;
 }
 .article2 ul {
     list-style: none;
 }
-.form-receta {
-    background-color: aliceblue;
+.que-trata {
+    padding: 2%;
+}
+blockquote {
+    background: rgb(240, 238, 238);
+    border-radius: 2%;
+    padding: 2%;
     color: black;
+}
+.form-receta {
+    background: rgb(240, 238, 238);
+    color: black;
+    width: 90%;
+    height: 90%;
+    border-radius: 2%;
 }
 form  li {
     padding: 10px;
+    display: block;
 }
 
 
