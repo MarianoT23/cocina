@@ -388,8 +388,18 @@ form  li {
     box-shadow: 5px 5px 50px black;
     margin-top: 3%;
 }
-.cocinero-svg {
+.cocinero-svg, .cocinero-svg-punta {
     margin: 0 5% -10px 5%;
+}
+@media (min-width:767px) and (max-width:1217px) {
+    .cocinero-svg-punta {
+        display: none;
+    }
+}
+@media (min-width:0px) and (max-width:767px) {
+    .cocinero-svg, .cocinero-svg-punta {
+        display: none;
+    }
 }
 
 /* -------
