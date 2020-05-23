@@ -10,7 +10,8 @@
         3.1 HEADER
         3.2 PRINCIPAL
         3.3 DE QUE SE TRATA - FORM
-        3.4 NUESTROS CHEFS 
+        3.4 NUESTROS CHEFS
+        3.5 FORM 
     4. FOOTER
     5. SVG's
     */
@@ -78,6 +79,7 @@ body {
                             "article"
                             "article2"
                             "article3"
+                            "article4"
                             "footer";
 }
 .article2 {
@@ -85,6 +87,9 @@ body {
 }
 .article3 {
     grid-area: article3;
+}
+.article4 {
+    grid-area: article4;
 }
 
 /* PRINCIPAL */
@@ -131,6 +136,7 @@ body {
                                 "article" 
                                 "article2"
                                 "article3"
+                                "article4"
                                 "footer";
     }
     .init {
@@ -150,26 +156,27 @@ body {
 @media (min-width:0px) and (max-width:767px) {
     body {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr ;
         grid-template-rows: auto;
         grid-template-areas:    "header" 
                                 "article" 
                                 "article2"
                                 "article3"
+                                "article4"
                                 "footer";
     }
     .init {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 20fr 1fr;
         grid-template-rows: 1fr;
-        grid-template-areas:    "entradas-snacks"
-                                "panes" 
-                                "tartas-pastas" 
-                                "carnes"
-                                "guisos-sopas" 
-                                "vegetariano" 
-                                "salsas" 
-                                "postres";
+        grid-template-areas:    ".. entradas-snacks .."
+                                ".. panes .." 
+                                ".. tartas-pastas .." 
+                                ".. carnes .."
+                                ".. guisos-sopas .." 
+                                ".. vegetariano .." 
+                                ".. salsas .." 
+                                ".. postres ..";
         margin: 1%;
     }
 }
@@ -233,6 +240,14 @@ nav > ul > li > a:hover::before {
     width: 100%;
 }
 
+@media (min-width:0px) and (max-width:767px) {
+    nav {
+        display: none;
+    }
+    .logo {
+        width: 100%;
+    }
+}
 
 /* --- 3.2 PRINCIPAL ---*/
 
@@ -277,31 +292,28 @@ nav > ul > li > a:hover::before {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas:    "que-trata que-trata trata-foto-1"
-                            "trata-foto-2 form-receta form-receta";
+    grid-template-areas:    "que-trata  que-trata  trata-foto-1";
     color: white;
     place-items: center;
 }
 .que-trata {
     grid-area: que-trata;
 }
-.form-receta {
-    grid-area: form-receta;
-}
 .trata-foto-1 {
     grid-area: trata-foto-1;
 }
-.trata-foto-2 {
-    grid-area: trata-foto-2;
-}
 .article2 > div > img {
-    width: 500px;
+    width: 100%;
 }
 .article2 ul {
     list-style: none;
 }
 .que-trata {
     padding: 2%;
+    font-size: 1.2em;
+    line-height: 1.5;
+    letter-spacing: 1.3;
+    word-spacing: 2px;
 }
 blockquote {
     background: rgb(240, 238, 238);
@@ -309,16 +321,17 @@ blockquote {
     padding: 2%;
     color: black;
 }
-.form-receta {
-    background: rgb(240, 238, 238);
-    color: black;
-    width: 90%;
-    height: 90%;
-    border-radius: 2%;
-}
-form  li {
-    padding: 10px;
-    display: block;
+@media (min-width:0px) and (max-width:767px) {
+    .article2{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "que-trata";
+    }
+    .trata-foto-1 {
+        display: none;
+    }
+    /* AGREGAR FOTO PARA DISPLAY MOBILE */
 }
 
 
@@ -364,6 +377,46 @@ form  li {
 }
 .recetas-cocinero {
     grid-area: recetas-cocinero;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:    "sus-recetas sus-entradas sus-panes"
+                            "sus-tartas sus-carnes sus-guisos"
+                            "sus-vegetales sus-salsas sus-postres";
+    gap: 2%;
+    margin: 4%;
+}
+.sus-recetas{
+    grid-area: sus-recetas;
+    font-size: 2em;
+    margin-top: 10%;
+}
+.sus-entradas{
+    grid-area: sus-entradas;
+}
+.sus-panes{
+    grid-area: sus-panes;
+}
+.sus-tartas{
+    grid-area: sus-tartas;
+}
+.sus-carnes{
+    grid-area: sus-carnes;
+}
+.sus-guisos{
+    grid-area: sus-guisos;
+}
+.sus-vegetales{
+    grid-area: sus-vegetales;
+}
+.sus-salsas{
+    grid-area: sus-salsas;
+}
+.sus-postres{
+    grid-area: sus-postres;
+}
+/* .recetas-cocinero {
+    grid-area: recetas-cocinero;
     padding: 1%;
     font-size: 1.1em;
 }
@@ -377,7 +430,7 @@ form  li {
 }
 .recetas-cocinero > ul > li {
     margin: 1%;
-}
+}*/
 .foto-cocinero {
     grid-area: foto-cocinero;
     padding: 8%;
@@ -401,6 +454,23 @@ form  li {
         display: none;
     }
 }
+
+/* FORM */
+.article4 {
+    display: flex;
+    background: rgb(34, 33, 33);
+}
+.form-receta {
+    width: 60%;
+}
+.form-foto {
+    width: 40%;
+}
+.form-foto img {
+    width: 100%;
+    height: auto;
+}
+
 
 /* -------
 4. FOOTER
