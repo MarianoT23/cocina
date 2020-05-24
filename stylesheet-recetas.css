@@ -52,57 +52,106 @@ article {
 3. HEADER
 -------- */
 
-.logo {
-    width: 20%;
-    font-size: large;
-    font-size: 1.3em;
-}
-nav {
-    width: 80%;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-nav > ul {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-nav li {
-    display: inline-block;
-    padding: 10px 0 2% 0;
-    margin: 10px 5px 5px 20px;
-
-    position: relative;
-}
-nav > ul > li > a::before {
-    content: "";
-    display: block;
-    height: 5px;
-    width: 100%;
-    background-color: white;
-
-    position: absolute;
-    top: 0;
-    width: 0%;
-    
-    transition: all ease-in-out 300ms;
-}
-
-nav > ul > li > a:hover::before {
-    width: 100%;
-}
-
-@media (min-width:0px) and (max-width:767px) {
+    /* 3.1 LOGO */
+    .logo {
+        width: 20%;
+        font-size: large;
+        font-size: 1.3em;
+    }
+    /* 3.2 NAV */
     nav {
+        width: 80%;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .nav2 {
         display: none;
     }
-    .logo {
+    nav > ul {
         width: 100%;
+        margin: 0;
+        padding: 0;
     }
-}
+    nav li {
+        display: inline-block;
+        padding: 10px 0 2% 0;
+        margin: 10px 5px 5px 20px;
+
+        position: relative;
+    }
+    .nav-toggle {
+        display: none;
+    }
+        /* 3.2.1 NAV ANIMATION */
+        nav > ul > li > a::before {
+            content: "";
+            display: block;
+            height: 5px;
+            width: 100%;
+            background-color: white;
+
+            position: absolute;
+            top: 0;
+            width: 0%;
+            
+            transition: all ease-in-out 300ms;
+        }
+        nav > ul > li > a:hover::before {
+            width: 100%;
+        }
+        /* 3.2.2 NAV MOBILE */
+        @media (min-width:0px) and (max-width:767px) {
+            .logo {
+                width: 85%;
+            }
+            nav {
+                display: none;
+            }
+            .nav-toggle {
+                display: none;
+            }
+            .nav-toggle:checked ~ .nav2 {
+                display: block;
+                width: 100%;
+            }
+            .nav-toggle:checked ~ .logo {
+                display: none;
+            }
+            header {
+                position: relative;
+            }
+            .nav-toggle-label {
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                margin-left: 10px;
+            }
+            .nav-toggle-label span,
+            .nav-toggle-label span::before,
+            .nav-toggle-label span::after {
+                display: block;
+                background: white;
+                height: 2px;
+                width: 2em;
+                border-radius: 2px;
+                position: relative;
+            }
+            .nav-toggle-label span::before,
+            .nav-toggle-label span::after {
+                content: '';
+                position: absolute;
+            }
+            .nav-toggle-label span::before {
+                bottom: 7px;
+            }
+            .nav-toggle-label span::after {
+                top: 7px;
+            }
+              
+        }
 
 
 
