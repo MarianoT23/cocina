@@ -392,7 +392,7 @@ a:visited {
                                 "foto-cocinero recetas-cocinero"
                                 "texto-cocinero recetas-cocinero";
         margin: 20px;
-        column-gap: 3%;
+        column-gap: 2%;
         background: rgb(240, 238, 238);
         padding: 0.8%;
         border-radius: 1%;
@@ -409,6 +409,7 @@ a:visited {
     .texto-cocinero {
         grid-area: texto-cocinero;
         padding: 1%;
+        font-size: 1.3em;
     }
     .foto-cocinero {
         grid-area: foto-cocinero;
@@ -439,19 +440,32 @@ a:visited {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: auto;
-            grid-template-areas:    "sus-recetas sus-entradas sus-panes"
-                                    "sus-tartas sus-carnes sus-guisos"
-                                    "sus-vegetales sus-salsas sus-postres";
+            grid-template-areas:    "sus-entradas   sus-recetas  sus-panes"
+                                    "sus-tartas     sus-carnes   sus-guisos"
+                                    "sus-vegetales  sus-salsas   sus-postres";
             gap: 2%;
-            margin: 4%;
+            margin: 2%;
+            padding: 2%;
+        }
+        .recetas-cocinero h4 {
+            text-align: center;
         }
         .sus-recetas{
             grid-area: sus-recetas;
-            font-size: 2em;
+            font-size: 1.7em;
             margin-top: 10%;
+            border-bottom: 2px dashed black;
+        }
+        .sus-recetas h3 {
+            display: inline-block;
+            text-align: center;
+            margin: 5% 15%;
         }
         .sus-entradas{
             grid-area: sus-entradas;
+        }
+        .sus-recetas img {
+            margin: 10%;
         }
         .sus-panes{
             grid-area: sus-panes;
@@ -476,6 +490,8 @@ a:visited {
         }
         .recetas-cocinero ul {
             list-style: none;
+            padding: 0;
+            line-height: 1.5;
         }
 
 
