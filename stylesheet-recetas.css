@@ -70,6 +70,9 @@ article {
     .nav2 {
         display: none;
     }
+    .nav3 {
+        display: none;
+    }
     nav > ul {
         width: 100%;
         margin: 0;
@@ -105,52 +108,11 @@ article {
         /* 3.2.2 NAV MOBILE */
         @media (min-width:0px) and (max-width:767px) {
             .logo {
-                width: 85%;
+                width: 100%;
             }
             nav {
                 display: none;
-            }
-            .nav-toggle {
-                display: none;
-            }
-            .nav-toggle:checked ~ .nav2 {
-                display: block;
-                width: 100%;
-            }
-            .nav-toggle:checked ~ .logo {
-                display: none;
-            }
-            header {
-                position: relative;
-            }
-            .nav-toggle-label {
-                position: absolute;
-                text-align: center;
-                top: 50%;
-                margin-left: 10px;
-            }
-            .nav-toggle-label span,
-            .nav-toggle-label span::before,
-            .nav-toggle-label span::after {
-                display: block;
-                background: white;
-                height: 2px;
-                width: 2em;
-                border-radius: 2px;
-                position: relative;
-            }
-            .nav-toggle-label span::before,
-            .nav-toggle-label span::after {
-                content: '';
-                position: absolute;
-            }
-            .nav-toggle-label span::before {
-                bottom: 7px;
-            }
-            .nav-toggle-label span::after {
-                top: 7px;
-            }
-              
+            }             
         }
 
 

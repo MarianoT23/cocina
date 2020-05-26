@@ -374,12 +374,13 @@ a:visited {
 
     .grid-cocinero {
         display: grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: 2fr 4fr;
         grid-template-rows: auto;
-        grid-template-areas:    "titulo-cocinero titulo-cocinero"
-                                "texto-cocinero foto-cocinero"
-                                "recetas-cocinero foto-cocinero";
+        grid-template-areas:    "titulo-cocinero  titulo-cocinero"
+                                "foto-cocinero    recetas-cocinero"
+                                "texto-cocinero   recetas-cocinero";
         margin: 20px;
+        column-gap: 2%;
         background: rgb(240, 238, 238);
         padding: 0.8%;
         border-radius: 1%;
@@ -388,9 +389,9 @@ a:visited {
         display: grid;
         grid-template-columns: 2fr 4fr;
         grid-template-rows: auto;
-        grid-template-areas:    "titulo-cocinero titulo-cocinero"
-                                "foto-cocinero recetas-cocinero"
-                                "texto-cocinero recetas-cocinero";
+        grid-template-areas:    "titulo-cocinero  titulo-cocinero"
+                                "foto-cocinero    recetas-cocinero"
+                                "texto-cocinero   recetas-cocinero";
         margin: 20px;
         column-gap: 2%;
         background: rgb(240, 238, 238);
