@@ -8,7 +8,7 @@
 </head>
 <body>
     <!----- HEADER ----->
-    <header style="scroll-snap-align: start;">
+    <header>
         <!-- LOGO -->
         <a href="index.html" class="logo"><div>
             <h2>El Recetario</h2>
@@ -265,6 +265,7 @@
                     <h4>Postres</h4>
                     <ul>
                         <li><a href="postres.html#isla-flotante">ISLA FLOTANTE</a></li>
+                        <li><a href="postres.html#pastafrola-magui">PASTA FROLA "MAGUI"</a></li>
                     </ul>
                 </div>
             </div>
@@ -301,11 +302,6 @@
                 </div>
                 <div class="sus-panes">       
                     <h4>Panes</h4>
-                    <ul>
-                        <li><a href="panes.html#focaccia">FOCACCIA</a></li>
-                        <li><a href="panes.html#pan-casero">PAN CASERO</a></li>
-                        <li><a href="panes.html#pan-queso">PANCITOS DE QUESO</a></li>
-                    </ul>
                 </div>
                 <div class="sus-tartas">
                     <h4>Tartas y Pastas</h4>
@@ -365,31 +361,27 @@
             <form action="https://formspree.io/mtimistit@ius.austral.edu.ar" method="POST">
                 <ul>
                     <li>
-                    <label for="chef">Chef:</label>
-                    <select name="Chef" id="chef"> 
-                        <option value="Andy y Nuni">Andy y Nuni</option>
-                        <option value="Agus y Tom">Tom y Agus</option>
-                        <option value="Mogui y Nano">Mogui y Nano</option>
-                        <option value="Pilu y Robert">Pilu y Robert</option>
-                    </select>
-                    <label for="nombre-receta">Nombre Receta</label>
-                    <input type="text" name="Nombre Receta" id="nombre-receta" required>
+                        <label for="chef" class="titulo-campo">Chef:</label>
+                        <select name="Chef" class="campo" id="chef"> 
+                            <option value="Andy y Nuni">Andy y Nuni</option>
+                            <option value="Agus y Tom">Tom y Agus</option>
+                            <option value="Mogui y Nano">Mogui y Nano</option>
+                            <option value="Pilu y Robert">Pilu y Robert</option>
+                        </select>
+                        <label for="nombre-receta">Nombre Receta</label>
+                        <input type="text" name="Nombre Receta" id="nombre-receta" required>
                     </li>
                     <li>
-                    <label for="ingredientes-form">Ingredientes:</label>
-                    </li>
-                    <li><textarea id="ingredientes-form" name="Ingredientes"></textarea></li>
-                    <li>
-                    <label for="preparacion-form">Preparación:</label>
+                        <label for="ingredientes-form" class="titulo-campo">Ingredientes:</label>
+                        <textarea id="ingredientes-form" name="Ingredientes"></textarea>
                     </li>
                     <li>
-                    <textarea id="preparacion-form" name="Preparación"></textarea>
+                        <label for="preparacion-form" class="titulo-campo">Preparación:</label>
+                        <textarea id="preparacion-form" name="Preparación"></textarea>                
                     </li>
                     <li>
-                    <label for="tips-form">Tips:</label>
-                    </li>
-                    <li>
-                    <textarea id="tips-form" name="Tips"></textarea>
+                        <label for="tips-form" class="titulo-campo">Tips:</label>
+                        <textarea id="tips-form" name="Tips"></textarea>
                     </li>
                     <li class="button">
                         <button type="submit">Mandanos tu receta!</button>
@@ -398,8 +390,6 @@
             </form>
         </div>
     </div>
-    <footer>
-        <a href="formulario.html">¿Hay algún porblema con la receta?</a>
-    </footer>
+
 </body>
 </html>
