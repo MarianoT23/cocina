@@ -17,7 +17,8 @@
         <nav>
             <ul>
                 <li><a href="#2">¿De qué se trata?</a></li>
-                <li><a href="#3">Nuestros chefs</a></li>
+                <li><a href="#3">Nuestros Chefs</a></li>
+                <li><a href="todo-sobre.html">Todo sobre</a></li>
             </ul>
         </nav>
     </header>
@@ -298,6 +299,9 @@
                 </div>
                 <div class="sus-panes">       
                     <h4>Panes</h4>
+                    <ul>
+                        <li><a href="panes.html#focaccia">FOCACCIA</a></li>
+                    </ul>   
                 </div>
                 <div class="sus-tartas">
                     <h4>Tartas y Pastas</h4>
@@ -317,6 +321,9 @@
                 </div>
                 <div class="sus-guisos">
                     <h4>Guisos y Sopas</h4>
+                    <ul>
+                        <li><a href="guisos-sopas.html#sopa-calabaza">SOPA DE CALABAZA</a></li>
+                    </ul>   
                 </div>
                 <div class="sus-vegetales">
                     <h4>Vegetales</h4>
@@ -370,22 +377,28 @@
                             <option value="Mogui y Nano">Mogui y Nano</option>
                             <option value="Pilu y Robert">Pilu y Robert</option>
                         </select>
-                        <label for="nombre-receta">Nombre Receta</label>
+                        <label for="nombre-receta" style="margin-left: 2%;">Nombre Receta</label>
                         <input type="text" name="Nombre Receta" id="nombre-receta" required>
                     </li>
                     <li>
                         <label for="ingredientes-form" class="titulo-campo">Ingredientes:</label>
+                    </li>
+                    <li>
                         <textarea id="ingredientes-form" name="Ingredientes"></textarea>
                     </li>
                     <li>
-                        <label for="preparacion-form" class="titulo-campo">Preparación:</label>
-                        <textarea id="preparacion-form" name="Preparación"></textarea>                
+                        <label for="preparacion-form" class="titulo-campo">Preparación:</label>   
+                    </li>
+                    <li>
+                        <textarea id="preparacion-form" name="Preparación"></textarea>            
                     </li>
                     <li>
                         <label for="tips-form" class="titulo-campo">Tips:</label>
+                    </li>
+                    <li>
                         <textarea id="tips-form" name="Tips"></textarea>
                     </li>
-                    <li class="button">
+                    <li>
                         <button type="submit">Mandanos tu receta!</button>
                     </li>
                 </ul>

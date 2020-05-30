@@ -85,9 +85,6 @@ article {
 
         position: relative;
     }
-    .nav-toggle {
-        display: none;
-    }
         /* 3.2.1 NAV ANIMATION */
         nav > ul > li > a::before {
             content: "";
@@ -159,7 +156,7 @@ article {
     text-align: center;
     font-weight: bold;
     padding: 10px;
-    background: rgb(27, 27, 27);
+    background: rgb(56, 54, 54);
 }
 .boton-carta:hover {
     background-color: red;
@@ -185,7 +182,7 @@ article {
     gap: 7px;
     margin: 4% 6%;
     padding: 10px;
-    background: rgb(34, 33, 33);
+    background: rgb(56, 54, 54);
     border-radius: 1%;
 }
 .titulo-receta {
