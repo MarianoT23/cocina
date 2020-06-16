@@ -19,3 +19,14 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+////////////////////////////// HAMBURGER MENU
+
+var miniNav = document.getElementById("mini-nav");
+function hambMenu() {
+    if (miniNav.style.display === "block") {
+        miniNav.style.display = "none";
+    } else {
+        miniNav.style.display = "block";
+    }
+};

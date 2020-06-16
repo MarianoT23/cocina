@@ -51,27 +51,37 @@ article {
 /* ------- 
 3. HEADER
 -------- */
-
+    /* --- 3.1 HEADER --- */
+    header {
+        background: rgb(56, 54, 54);
+        color: #f1efe6;
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        grid-template-areas: "logo nav";
+        place-items: center;
+        } 
+    .logo {
+        grid-area: logo;
+    }
+    nav {
+        grid-area: nav;
+    }
+    #mini-nav {
+        display: none;
+    }
     /* 3.1 LOGO */
     .logo {
-        width: 20%;
         font-size: large;
         font-size: 1.3em;
     }
     /* 3.2 NAV */
     nav {
-        width: 80%;
         list-style: none;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
-    }
-    .nav2 {
-        display: none;
-    }
-    .nav3 {
-        display: none;
     }
     nav > ul {
         width: 100%;
@@ -102,14 +112,87 @@ article {
         nav > ul > li > a:hover::before {
             width: 100%;
         }
-        /* 3.2.2 NAV MOBILE */
-        @media (min-width:0px) and (max-width:767px) {
-            .logo {
-                width: 100%;
-            }
+        /* 3.2.2 NAV TABLET Y MOBILE */
+        @media (min-width:0px) and (max-width:1216px) {
             nav {
                 display: none;
-            }             
+            }
+            header {
+                display: grid;
+                grid-template-columns: 6fr 1fr;
+                grid-template-areas:    "logo hamb-menu"
+                                        "mini-nav mini-nav";
+                place-items: center;
+            }
+            .logo {
+                grid-area: logo;
+            }
+            .hamb-menu {
+                grid-area: hamb-menu;
+            }
+            #mini-nav {
+                grid-area: mini-nav;
+            }
+            /* HAMBURGER MENU */
+            .hamb-menu {
+                display: block;
+                width: 60px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .hamb-menu:hover {
+                background-color: grey;
+            }
+            .hamb-boton {
+                position: relative; 
+                background-color: white;
+                width: 60%; 
+                height: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .hamb-boton:before,
+            .hamb-boton:after {
+                content: '';
+                position: absolute;
+                top: -10px;
+                background-color: white; 
+                width: 100%; 
+                height: 2px;
+            }
+            .hamb-boton:after {
+                position: absolute;
+                top: 10px;
+                background-color: white; 
+                width: 100%; 
+                height: 2px;
+            }
+            /* MINI NAV */
+            #mini-nav {
+                display: none;
+                width: 100%;
+            }
+            #mini-nav hr {
+                width: 30%;
+            }
+            #mini-nav > ul {
+                width: 100%;
+                list-style: none;
+                margin: 5px;
+                padding: 0;
+                text-align: center;
+            }
+            #mini-nav  li {
+                display: inline-block;
+                width: 100%;
+                padding: 5px;
+            }
+            #mini-nav  li:hover {
+                background-color: gray;
+            }
         }
 
 

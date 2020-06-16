@@ -13,15 +13,29 @@
         <!-- LOGO -->
         <a href="index.html" class="logo"><div>
             <h2>El Recetario</h2>
-        </div></a>
-        <!-- NAV -->
+        </div></a> 
+        <!-- DESKTOP NAV -->
         <nav>
             <ul>
                 <li><a href="#2">¿De qué se trata?</a></li>
                 <li><a href="#3">Nuestros Chefs</a></li>
                 <li><a href="todo-sobre.html">Todo sobre</a></li>
             </ul>
-        </nav>
+        </nav> 
+        <!-- TABLET Y MOBILE NAV -->
+        <div class="hamb-menu" onclick="hambMenu();">
+           <div class="hamb-boton"></div>
+        </div>
+        <div id="mini-nav">
+            <ul>
+                <a href="#2"><li>¿De qué se trata?</li></a>
+                <hr>
+                <a href="#3"><li>Nuestros Chefs</li></a>
+                <hr>
+                <a href="todo-sobre.html"></li>Todo sobre</li></a>
+            </ul>
+        </div>  
+
     </header>
     <!----- MENU ----->
     <article class="init"> 
@@ -419,6 +433,7 @@
             </form>
         </div>
     </div>
+    <script src="script-index.js"></script>
     <!-------------------------------- FIREBASE -------------------------------->
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
