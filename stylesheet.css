@@ -73,134 +73,6 @@ a:visited {
 
 
 
-/* ----------- 
-2. GRID LAYOUT 
------------- */
-
-    /* --- 2.1 DESKTOP --- */
-
-    /* BODY */
-    body {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 10vh 90vh auto auto auto;
-        grid-template-areas:    "header" 
-                                "article"
-                                "init2"
-                                "article2"
-                                "article3"
-                                "article4";
-    }
-    .article2 {
-        grid-area: article2;
-    }
-    .article3 {
-        grid-area: article3;
-    }
-    .article4 {
-        grid-area: article4;
-    }
-    .init2 {
-        display: none;
-    }
-
-    /* PRINCIPAL */
-    .init {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas:    "entradas-snacks panes tartas-pastas carnes"
-                                "guisos-sopas vegetariano salsas postres";
-    }
-    .entradas-snacks {
-        grid-area: entradas-snacks;
-    }
-    .panes {
-        grid-area: panes;
-    }
-    .tartas-pastas {
-        grid-area: tartas-pastas;
-    }
-    .carnes {
-        grid-area: carnes;
-    }
-    .guisos-sopas {
-        grid-area: guisos-sopas;
-    }
-    .vegetariano {
-        grid-area: vegetariano;
-    }
-    .salsas {
-        grid-area: salsas;
-    }
-    .postres {
-        grid-area: postres;
-    }
-
-    /* --- 2.2 GRID LAYOUT TABLET --- */
-
-    @media (min-width:768px) and (max-width:992px) {
-        body {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            grid-template-areas:    "header" 
-                                    "article" 
-                                    "init2"
-                                    "article2"
-                                    "article3"
-                                    "article4";
-        }
-        .init {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-areas:    "entradas-snacks panes"
-                                    "tartas-pastas carnes"
-                                    "guisos-sopas vegetariano" 
-                                    "salsas postres";
-            margin: 1%;
-        }
-        .init2 {
-            display: none;
-        }
-    }
-
-    /* --- 2.3 GRID LAYOUT MOBILE --- */
-
-    @media (min-width:0px) and (max-width:767px) {
-        body {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            grid-template-areas:    "header" 
-                                    "article" 
-                                    "init2"
-                                    "article2"
-                                    "article3"
-                                    "article4";
-            
-        }
-        .init2 {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-areas:    "entradas-snacks"
-                                    "panes" 
-                                    "tartas-pastas" 
-                                    "carnes"
-                                    "guisos-sopas" 
-                                    "vegetariano" 
-                                    "salsas" 
-                                    "postres";
-            margin: 2%;
-        }
-        .init2 {
-            grid-area: init2;
-        }
-        .init {
-            display: none;
-        }
-    }
-
 
 
 /* ---------------- 
@@ -694,7 +566,7 @@ a:visited {
 
 
 /* ------
-4. SVG's 
+3. SVG's 
 --------*/
 
     .sm-svg {
@@ -709,3 +581,132 @@ a:visited {
         width: 70px;
         height: auto;
     }
+
+/* ----------- 
+4. GRID LAYOUT 
+------------ */
+
+    /* --- 2.1 DESKTOP --- */
+
+    /* BODY */
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10vh 90vh auto auto auto;
+        grid-template-areas:    "header" 
+                                "article"
+                                "init2"
+                                "article2"
+                                "article3"
+                                "article4";
+    }
+    .article2 {
+        grid-area: article2;
+    }
+    .article3 {
+        grid-area: article3;
+    }
+    .article4 {
+        grid-area: article4;
+    }
+    .init2 {
+        display: none;
+    }
+
+    /* PRINCIPAL */
+    .init {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:    "entradas-snacks panes tartas-pastas carnes"
+                                "guisos-sopas vegetariano salsas postres";
+    }
+    .entradas-snacks {
+        grid-area: entradas-snacks;
+    }
+    .panes {
+        grid-area: panes;
+    }
+    .tartas-pastas {
+        grid-area: tartas-pastas;
+    }
+    .carnes {
+        grid-area: carnes;
+    }
+    .guisos-sopas {
+        grid-area: guisos-sopas;
+    }
+    .vegetariano {
+        grid-area: vegetariano;
+    }
+    .salsas {
+        grid-area: salsas;
+    }
+    .postres {
+        grid-area: postres;
+    }
+
+    /* --- 2.2 GRID LAYOUT TABLET --- */
+
+    @media (min-width:768px) and (max-width:992px) {
+        body {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "header" 
+                                    "article" 
+                                    "init2"
+                                    "article2"
+                                    "article3"
+                                    "article4";
+        }
+        .init {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:    "entradas-snacks panes"
+                                    "tartas-pastas carnes"
+                                    "guisos-sopas vegetariano" 
+                                    "salsas postres";
+            margin: 1%;
+        }
+        .init2 {
+            display: none;
+        }
+    }
+
+    /* --- 2.3 GRID LAYOUT MOBILE --- */
+
+    @media (min-width:0px) and (max-width:767px) {
+        body {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "header" 
+                                    "article" 
+                                    "init2"
+                                    "article2"
+                                    "article3"
+                                    "article4";
+            
+        }
+        .init2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas:    "entradas-snacks"
+                                    "panes" 
+                                    "tartas-pastas" 
+                                    "carnes"
+                                    "guisos-sopas" 
+                                    "vegetariano" 
+                                    "salsas" 
+                                    "postres";
+            margin: 2%;
+        }
+        .init2 {
+            grid-area: init2;
+        }
+        .init {
+            display: none;
+        }
+    }
+
