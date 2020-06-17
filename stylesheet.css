@@ -75,6 +75,7 @@ a:visited {
         grid-template-rows: 10vh 90vh auto auto auto;
         grid-template-areas:    "header" 
                                 "article"
+                                "init2"
                                 "article2"
                                 "article3"
                                 "article4";
@@ -87,6 +88,9 @@ a:visited {
     }
     .article4 {
         grid-area: article4;
+    }
+    .init2 {
+        display: none;
     }
 
     /* PRINCIPAL */
@@ -131,6 +135,7 @@ a:visited {
             grid-template-rows: auto;
             grid-template-areas:    "header" 
                                     "article" 
+                                    "init2"
                                     "article2"
                                     "article3"
                                     "article4";
@@ -138,12 +143,14 @@ a:visited {
         .init {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
             grid-template-areas:    "entradas-snacks panes"
                                     "tartas-pastas carnes"
                                     "guisos-sopas vegetariano" 
                                     "salsas postres";
             margin: 1%;
+        }
+        .init2 {
+            display: none;
         }
     }
 
@@ -152,28 +159,34 @@ a:visited {
     @media (min-width:0px) and (max-width:767px) {
         body {
             display: grid;
-            grid-template-columns: 1fr ;
+            grid-template-columns: 1fr;
             grid-template-rows: auto;
             grid-template-areas:    "header" 
                                     "article" 
+                                    "init2"
                                     "article2"
                                     "article3"
                                     "article4";
             
         }
-        .init {
+        .init2 {
             display: grid;
-            grid-template-columns: 1fr 20fr 1fr;
-            grid-template-rows: 1fr;
-            grid-template-areas:    ".. entradas-snacks .."
-                                    ".. panes .." 
-                                    ".. tartas-pastas .." 
-                                    ".. carnes .."
-                                    ".. guisos-sopas .." 
-                                    ".. vegetariano .." 
-                                    ".. salsas .." 
-                                    ".. postres ..";
-            margin: 1%;
+            grid-template-columns: 1fr;
+            grid-template-areas:    "entradas-snacks"
+                                    "panes" 
+                                    "tartas-pastas" 
+                                    "carnes"
+                                    "guisos-sopas" 
+                                    "vegetariano" 
+                                    "salsas" 
+                                    "postres";
+            margin: 2%;
+        }
+        .init2 {
+            grid-area: init2;
+        }
+        .init {
+            display: none;
         }
     }
 
@@ -253,13 +266,14 @@ a:visited {
             }
             header {
                 display: grid;
-                grid-template-columns: 6fr 1fr;
+                grid-template-columns: 3fr 1fr;
                 grid-template-areas:    "logo hamb-menu"
                                         "mini-nav mini-nav";
                 place-items: center;
             }
             .logo {
                 grid-area: logo;
+                font-size: 1.3em;
             }
             .hamb-menu {
                 grid-area: hamb-menu;
@@ -363,6 +377,21 @@ a:visited {
         box-shadow: 5px 5px 50px black;
     }
 
+    .init2 {
+        margin: 0;
+        background: rgb(240, 238, 238);
+        display: flex;
+        flex-wrap: row;
+    }
+    .init2 > a > div {
+        width: 50%;
+    }
+    .init2 h2 {
+        font-size: 1.2em;
+        margin-left: 15%;
+    }
+
+
     /* --- 3.3 DE QUE SE TRATA --- */
     .article2 {
         background: rgb(56, 54, 54);
@@ -445,6 +474,15 @@ a:visited {
         }
         .trata-foto-1 {
             display: none;
+        }
+        blockquote {
+            font-size: 1.2em;
+        }
+        cite {
+            font-size: 1.1em;
+        }
+        .que-trata {
+            font-size: 1em;
         }
         /* AGREGAR FOTO PARA DISPLAY MOBILE */
     }
