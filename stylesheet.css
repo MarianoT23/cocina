@@ -1,23 +1,26 @@
    
    /* TABLA DE CONTENIDOS 
     0. FONTS
-    1. GENERAL STYLING
-    2. GRID LAYOUT
-        2.1 DESKTOP
-        2.2 TABLET 
-        2.3 MOBILE
+    1. CSS VARIABLES
+    2. GENERAL STYLING Y RESETS
     3. SPECIFIC STYLING
         3.1 HEADER
             3.1.1 LOGO
             3.1.2 NAV DESKTOP
+                3.1.2.1 NAV DESKTOP ANIMATION 
             3.1.3 NAV MOBILE-TABLET
         3.2 PRINCIPAL
             3.2.1 MENU DESKTOP - TABLET
             3.2.2 MENU MOBILE
         3.3 DE QUE SE TRATA - FORM
+            3.3.1 CITA
         3.4 NUESTROS CHEFS
         3.5 FORM 
     4. SVG's
+    5. GRID LAYOUT
+        5.1 DESKTOP
+        5.2 TABLET 
+        5.3 MOBILE
     */
 
 /* NOTAS
@@ -41,16 +44,26 @@ MOBILE =
 /* QUOTE */
     @import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
-
 /* TEXTO */
 body {
     font-family: 'Nunito', sans-serif; 
 }
 
 
+
+/* ------------------ 
+1. CSS VARIABLES 
+------------------ */
+:root {
+    --oscuro-menus: rgb(56, 54, 54);
+    --claro-fondos: rgb(240, 238, 238);
+    --claro-letras: #f1efe6;
+}
+
+
     
 /* ------------------ 
-1. GENERAL STYLING 
+2. GENERAL STYLING Y RESETS
 ------------------ */
 html {
     scroll-behavior: smooth;
@@ -73,48 +86,37 @@ a:visited {
 
 
 
-
-
 /* ---------------- 
 3. SPECIFIC STYLING 
 ----------------- */
 
     /* --- 3.1 HEADER --- */
     header {
-        background: rgb(56, 54, 54);
-        color: #f1efe6;
+        background: var(--oscuro-menus);
+        color: var(--claro-letras);
         display: grid;
         grid-template-columns: 2fr 5fr;
         grid-template-rows: 10vh;
         grid-template-areas: "logo nav";
         place-items: center;
         } 
-    .logo {
-        grid-area: logo;
-    }
-    nav {
-        grid-area: nav;
-    }
     .hamb-menu {
         display: none;
     }
         /* - 3.1.1 LOGO - */
         .logo {
+            grid-area: logo;
             font-size: 2em;
         }
         .logo h2 {
             font-family: 'Pangolin', cursive;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         } 
         /* - 3.1.2 NAV DESKTOP - */
         nav {
+            grid-area: nav;
             list-style: none;
-            display: flex;
-            align-items: center;
         }
-        nav > ul {
+        nav ul {
             width: 100%;
             margin: 0;
             padding: 0;
@@ -126,22 +128,23 @@ a:visited {
 
             position: relative;
         }
-        nav > ul > li > a::before {
-            content: "";
-            display: block;
-            height: 5px;
-            width: 100%;
-            background-color: white;
+            /* 3.1.2.1 NAV DESKTOP ANIMATION */
+            nav > ul > li > a::before {
+                content: "";
+                display: block;
+                height: 5px;
+                width: 100%;
+                background-color: var(--claro-letras);
 
-            position: absolute;
-            top: 0;
-            width: 0%;
-            
-            transition: all ease-in-out 300ms;
-        }
-        nav > ul > li > a:hover::before {
-            width: 100%;
-        }
+                position: absolute;
+                top: 0;
+                width: 0%;
+                
+                transition: all ease-in-out 300ms;
+            }
+            nav > ul > li > a:hover::before {
+                width: 100%;
+            }
         /* - 3.1.3 NAV TABLET-CELU - */
         @media (min-width:0px) and (max-width:992px) {
             nav {
@@ -155,7 +158,6 @@ a:visited {
                 place-items: center;
             }
             .logo {
-                grid-area: logo;
                 font-size: 1.3em;
             }
             .hamb-menu {
@@ -178,7 +180,7 @@ a:visited {
                 }
                 .hamb-boton {
                     position: relative; 
-                    background-color: white;
+                    background-color: var(--claro-letras);
                     width: 60%; 
                     height: 2px;
                     display: flex;
@@ -190,14 +192,14 @@ a:visited {
                     content: '';
                     position: absolute;
                     top: -10px;
-                    background-color: white; 
+                    background-color: var(--claro-letras);
                     width: 100%; 
                     height: 2px;
                 }
                 .hamb-boton:after {
                     position: absolute;
                     top: 10px;
-                    background-color: white; 
+                    background-color: var(--claro-letras);
                     width: 100%; 
                     height: 2px;
                 }
@@ -246,8 +248,8 @@ a:visited {
     }
     .titulo-foto {
         padding: 0.5%;
-        background: rgb(56, 54, 54);
-        color: #f1efe6;
+        background: var(--oscuro-menus);
+        color: var(--claro-letras);
         text-align: center;
         width: 95%;
         margin: 0;
@@ -260,7 +262,7 @@ a:visited {
     /* MOBILE */
     .init2 {
         margin: 0;
-        background: rgb(240, 238, 238);
+        background: var(--claro-fondos);
         display: flex;
         flex-wrap: wrap;
     }
@@ -281,16 +283,15 @@ a:visited {
         margin-right: 20px;
     }
 
-
     /* --- 3.3 DE QUE SE TRATA --- */
     .article2 {
-        background: rgb(56, 54, 54);
+        background: var(--oscuro-menus);
         background-size: cover;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto;
         grid-template-areas:    "que-trata  que-trata  trata-foto-1";
-        color: #f1efe6;
+        color: var(--claro-letras);
         place-items: center;
     }
     .que-trata {
@@ -312,49 +313,50 @@ a:visited {
         letter-spacing: 1.3;
         word-spacing: 2px;
     }
-    .cita {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    blockquote {
-        color: #f1efe6;
-        font-family: 'Special Elite', cursive;
-        font-weight: 100;
-        font-size: 1.8rem;
-        max-width: 75%;
-        line-height: 1.4;
-        position: relative;
-        margin: 0;
-        padding: .5rem;
-    }
-    blockquote:before,
-    blockquote:after {
-        position: absolute;
-        color: #f1efe6;
-        font-size: 8rem;
-        width: 4rem;
-        height: 4rem;
-    }
+        /* - 3.3.1 CITA - */
+        .cita {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        blockquote {
+            color: var(--claro-letras);
+            font-family: 'Special Elite', cursive;
+            font-weight: 100;
+            font-size: 1.8rem;
+            max-width: 75%;
+            line-height: 1.4;
+            position: relative;
+            margin: 0;
+            padding: .5rem;
+        }
+        blockquote:before,
+        blockquote:after {
+            position: absolute;
+            color: var(--claro-letras);
+            font-size: 8rem;
+            width: 4rem;
+            height: 4rem;
+        }
 
-    blockquote:before {
-        content: '“';
-        left: -5rem;
-        top: -2rem;
-    }
+        blockquote:before {
+            content: '“';
+            left: -5rem;
+            top: -2rem;
+        }
 
-    blockquote:after {
-        content: '”';
-        right: -5rem;
-        bottom: 1rem;
-    }
-    cite {
-        font-family: 'Special Elite', cursive;
-        font-size: 1.6rem;
-        line-height: 3;
-        text-align: right;
-    }
+        blockquote:after {
+            content: '”';
+            right: -5rem;
+            bottom: 1rem;
+        }
+        cite {
+            font-family: 'Special Elite', cursive;
+            font-size: 1.6rem;
+            line-height: 3;
+            text-align: right;
+        }
     @media (min-width:0px) and (max-width:767px) {
         .article2{
             display: grid;
@@ -389,7 +391,7 @@ a:visited {
                                 "texto-cocinero   recetas-cocinero";
         margin: 20px;
         column-gap: 2%;
-        background: rgb(240, 238, 238);
+        background: var(--claro-fondos);
         padding: 0.8%;
         border-radius: 1%;
     }
@@ -402,7 +404,7 @@ a:visited {
                                 "texto-cocinero   recetas-cocinero";
         margin: 20px;
         column-gap: 2%;
-        background: rgb(240, 238, 238);
+        background: var(--claro-fondos);
         padding: 0.8%;
         border-radius: 1%;
     }
@@ -417,7 +419,6 @@ a:visited {
         grid-area: titulo-cocinero;
         text-align: center;
         border-bottom: 0.1em dashed black;
-        background: rgb(221, 218, 218);
     }
     .texto-cocinero {
         grid-area: texto-cocinero;
@@ -437,6 +438,7 @@ a:visited {
     .cocinero-svg, .cocinero-svg-punta {
         margin: 0 5% -10px 5%;
     }
+    /* TABLET */
     @media (min-width:767px) and (max-width:1217px) {
         .cocinero-svg-punta {
             display: none;
@@ -448,11 +450,6 @@ a:visited {
             grid-template-areas:    "titulo-cocinero  titulo-cocinero"
                                     "foto-cocinero    texto-cocinero"
                                     "recetas-cocinero recetas-cocinero";
-            margin: 20px;
-            column-gap: 2%;
-            background: rgb(240, 238, 238);
-            padding: 0.8%;
-            border-radius: 1%;
         }
         .grid-cocinero2 {
             display: grid;
@@ -461,13 +458,12 @@ a:visited {
             grid-template-areas:    "titulo-cocinero  titulo-cocinero"
                                     "foto-cocinero    texto-cocinero"
                                     "recetas-cocinero recetas-cocinero";
-            margin: 20px;
-            column-gap: 2%;
-            background: rgb(240, 238, 238);
-            padding: 0.8%;
-            border-radius: 1%;
+        }
+        .texto-cocinero {
+            font-size: 1.2em;
         }
     }
+    /* MOBILE */
     @media (min-width:0px) and (max-width:767px) {
         .cocinero-svg, .cocinero-svg-punta {
             display: none;
@@ -479,11 +475,6 @@ a:visited {
             grid-template-areas:    "titulo-cocinero  titulo-cocinero"
                                     "foto-cocinero    texto-cocinero"
                                     "recetas-cocinero recetas-cocinero";
-            margin: 20px;
-            column-gap: 2%;
-            background: rgb(240, 238, 238);
-            padding: 0.8%;
-            border-radius: 1%;
         }
         .grid-cocinero2 {
             display: grid;
@@ -492,11 +483,6 @@ a:visited {
             grid-template-areas:    "titulo-cocinero  titulo-cocinero"
                                     "foto-cocinero    texto-cocinero"
                                     "recetas-cocinero recetas-cocinero";
-            margin: 20px;
-            column-gap: 2%;
-            background: rgb(240, 238, 238);
-            padding: 0.8%;
-            border-radius: 1%;
         }
         .texto-cocinero {
             font-size: 1em;
@@ -562,12 +548,27 @@ a:visited {
             padding: 0;
             line-height: 1.5;
         }
-
+        @media (min-width:0px) and (max-width:767px) {
+            .recetas-cocinero {
+                grid-area: recetas-cocinero;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:    "sus-recetas  sus-recetas"
+                                        "sus-entradas sus-panes"
+                                        "sus-tartas   sus-carnes   "
+                                        "sus-guisos   sus-vegetales  "
+                                        "sus-salsas   sus-postres";
+                gap: 2%;
+                margin: 2%;
+                padding: 2%;
+            }
+        }
 
     /* --- 3.5 FORM ---*/
     .article4 {
         display: flex;
-        background: rgb(56, 54, 54);
+        background: var(--oscuro-menus);
     }
     .form-foto {
         width: 35%;
@@ -581,7 +582,7 @@ a:visited {
     }
     .form-receta {
         width: 65%;
-        color: rgb(221, 218, 218);
+        color: var(--claro-fondos);
         font-size: 1.2em;
     }
     .form-receta ul {
@@ -606,7 +607,7 @@ a:visited {
         margin-top: 1%;
         width: 170px;
         height: 35px;
-        background-color: white;
+        background-color: var(--claro-fondos);
         border: none;
         cursor: pointer;
     }
@@ -618,7 +619,7 @@ a:visited {
 
 
 /* ------
-3. SVG's 
+4. SVG's 
 --------*/
 
     .sm-svg {
@@ -635,10 +636,10 @@ a:visited {
     }
 
 /* ----------- 
-4. GRID LAYOUT 
+5. GRID LAYOUT 
 ------------ */
 
-    /* --- 2.1 DESKTOP --- */
+    /* --- 5.1 DESKTOP --- */
 
     /* BODY */
     body {
@@ -698,7 +699,7 @@ a:visited {
         grid-area: postres;
     }
 
-    /* --- 2.2 GRID LAYOUT TABLET --- */
+    /* --- 5.2 GRID LAYOUT TABLET --- */
 
     @media (min-width:768px) and (max-width:992px) {
         body {
@@ -726,7 +727,7 @@ a:visited {
         }
     }
 
-    /* --- 2.3 GRID LAYOUT MOBILE --- */
+    /* --- 5.3 GRID LAYOUT MOBILE --- */
 
     @media (min-width:0px) and (max-width:767px) {
         body {
