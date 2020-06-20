@@ -441,10 +441,65 @@ a:visited {
         .cocinero-svg-punta {
             display: none;
         }
+        .grid-cocinero {
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "titulo-cocinero  titulo-cocinero"
+                                    "foto-cocinero    texto-cocinero"
+                                    "recetas-cocinero recetas-cocinero";
+            margin: 20px;
+            column-gap: 2%;
+            background: rgb(240, 238, 238);
+            padding: 0.8%;
+            border-radius: 1%;
+        }
+        .grid-cocinero2 {
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "titulo-cocinero  titulo-cocinero"
+                                    "foto-cocinero    texto-cocinero"
+                                    "recetas-cocinero recetas-cocinero";
+            margin: 20px;
+            column-gap: 2%;
+            background: rgb(240, 238, 238);
+            padding: 0.8%;
+            border-radius: 1%;
+        }
     }
     @media (min-width:0px) and (max-width:767px) {
         .cocinero-svg, .cocinero-svg-punta {
             display: none;
+        }
+        .grid-cocinero {
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "titulo-cocinero  titulo-cocinero"
+                                    "foto-cocinero    texto-cocinero"
+                                    "recetas-cocinero recetas-cocinero";
+            margin: 20px;
+            column-gap: 2%;
+            background: rgb(240, 238, 238);
+            padding: 0.8%;
+            border-radius: 1%;
+        }
+        .grid-cocinero2 {
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "titulo-cocinero  titulo-cocinero"
+                                    "foto-cocinero    texto-cocinero"
+                                    "recetas-cocinero recetas-cocinero";
+            margin: 20px;
+            column-gap: 2%;
+            background: rgb(240, 238, 238);
+            padding: 0.8%;
+            border-radius: 1%;
+        }
+        .texto-cocinero {
+            font-size: 1em;
         }
     }
         /* 3.4.1 SUS RECETAS */
