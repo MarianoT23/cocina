@@ -1,0 +1,713 @@
+   
+   /* TABLA DE CONTENIDOS 
+    0. FONTS
+    1. CSS VARIABLES
+    2. GENERAL STYLING Y RESETS
+    3. SPECIFIC STYLING
+        3.1 HEADER
+            3.1.1 LOGO
+            3.1.2 NAV DESKTOP
+                3.1.2.1 NAV DESKTOP ANIMATION 
+            3.1.3 NAV MOBILE-TABLET
+        3.2 PRINCIPAL
+            3.2.1 MENU DESKTOP - TABLET
+            3.2.2 MENU MOBILE
+        3.3 DE QUE SE TRATA - FORM
+            3.3.1 CITA
+        3.4 NUESTROS CHEFS
+    4. SVG's
+    5. GRID LAYOUT
+        5.1 DESKTOP
+        5.2 TABLET 
+        5.3 MOBILE
+    */
+
+
+/* NOTAS
+DESKTOP = 993px : -
+TABLET = 768px : 992px
+MOBILE = - : 767px
+*/
+
+
+/* ------
+0. FONTS
+-------*/
+/* PANGOLIN >>> font-family: 'Pangolin', cursive; */
+    @import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+/* NUNITO >>> font-family: 'Nunito', sans-serif; */
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+/* BALSAMIQ SANS >>> */
+    @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400&family=Nunito:ital,wght@0,400;0,600;1,400&display=swap');
+/* QUOTE */
+    @import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+/* TEXTO */
+body {
+    font-family: 'Nunito', sans-serif; 
+}
+
+
+
+/* ------------------ 
+1. CSS VARIABLES 
+------------------ */
+:root {
+    --oscuro-menus: rgb(56, 54, 54);
+    --claro-fondos: rgb(240, 238, 238);
+    --oscuro-letras: black;
+    --claro-letras: #f1efe6;
+}
+
+
+    
+/* ------------------ 
+2. GENERAL STYLING Y RESETS
+------------------ */
+html {
+    scroll-behavior: smooth;
+}
+body {
+    color: var(--oscuro-letas);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+/* ---------------- 
+3. SPECIFIC STYLING 
+----------------- */
+
+    /* --- 3.1 HEADER --- */
+    header {
+        background: var(--oscuro-menus);
+        color: var(--claro-letras);
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+        grid-template-rows: 10vh;
+        grid-template-areas: "logo nav";
+        place-items: center;
+        } 
+    .hamb-menu {
+        display: none;
+    }
+        /* - 3.1.1 LOGO - */
+        .logo {
+            grid-area: logo;
+            font-family: 'Pangolin', cursive;
+            font-size: 2em;
+            width: 100%;
+            text-align: center;
+        }
+        /* - 3.1.2 NAV DESKTOP - */
+        nav {
+            grid-area: nav;
+            list-style: none;
+        }
+        nav ul {
+            width: 100%;
+        }
+        nav li {
+            display: inline-block;
+            padding: 10px 0;
+            margin-left: 43px;
+
+            position: relative;
+        }
+        #mini-nav {
+            display: none;
+        }
+            /* NAV-LOGO-HAMBMENU FADE DOWN-IN */
+            @keyframes nav-fade-in {
+                0% {opacity: 0; transform: translateY(-15px);}
+                100% {opacity: 1; transform: translateY(0);}
+            }
+            nav, .logo, .hamb-menu, .init {
+                animation-name: nav-fade-in;
+                animation-duration: 1s;
+            }
+            /* 3.1.2.1 HOVER ANIMATION */
+            nav > ul > li > a::before {
+                content: "";
+                display: block;
+                height: 3px;
+                width: 100%;
+                background-color: var(--claro-letras);
+
+                position: absolute;
+                top: 0;
+                width: 0%;
+                
+                transition: all ease-in-out 300ms;
+            }
+            nav > ul > li > a:hover::before {
+                width: 100%;
+            }
+        /* - 3.1.3 NAV TABLET-CELU - */
+        @media (min-width:0px) and (max-width:992px) {
+            nav {
+                display: none;
+            }
+            header {
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                grid-template-areas:    "logo hamb-menu"
+                                        "mini-nav mini-nav";
+                place-items: center;
+            }
+            .logo {
+                font-size: 1.3em;
+            }
+            .hamb-menu {
+                grid-area: hamb-menu;
+            }
+            #mini-nav {
+                grid-area: mini-nav;
+            }
+                /* HAMBURGER MENU */
+                .hamb-menu {
+                    display: block;
+                    width: 60px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .hamb-menu:hover {
+                    background-color: grey;
+                    transition: ease-in-out 0.5s;
+                }
+                .hamb-boton {
+                    position: relative; 
+                    background-color: var(--claro-letras);
+                    width: 60%; 
+                    height: 2px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .hamb-boton:before,
+                .hamb-boton:after {
+                    content: '';
+                    position: absolute;
+                    top: -10px;
+                    background-color: var(--claro-letras);
+                    width: 100%; 
+                    height: 2px;
+                }
+                .hamb-boton:after {
+                    position: absolute;
+                    top: 10px;
+                    background-color: var(--claro-letras);
+                    width: 100%; 
+                    height: 2px;
+                }
+                /* MINI NAV */
+                #mini-nav {
+                    display: none;
+                    width: 100%;
+                }
+                #mini-nav hr {
+                    margin: auto;
+                    width: 40%;
+                }
+                #mini-nav > ul {
+                    width: 100%;
+                    list-style: none;
+                    text-align: center;
+                }
+                #mini-nav li {
+                    display: inline-block;
+                    width: 100%;
+                    padding: 0.7em;
+                }
+                #mini-nav li:hover {
+                    background-color: gray;
+                    transition: ease-in-out 0.5s;
+                }
+            } 
+
+        /* --- 3.2 PRINCIPAL ---*/
+            /* - 3.2.1 DESKTOP - TABLET */
+            .platos {
+                display: flex;
+                flex-wrap: wrap;
+                flex-flow: column;
+                align-items: center;
+                justify-content: center;
+                height: 45vh;
+                overflow: hidden;
+            }
+            .foto {
+                width: 95%;
+                height: 80%;
+                margin: 10px 0 0 0;
+            }
+            .titulo-foto {
+                padding: 0.5%;
+                background: var(--oscuro-menus);
+                color: var(--claro-letras);
+                text-align: center;
+                width: 95%;
+            }
+            .platos:hover {
+                opacity: 0.7;
+                transition: all ease-in-out 500ms;
+                box-shadow: 0 0 60px var(--oscuro-menus);
+            }
+            /* - 3.2.2 MOBILE - */
+            .init2 {
+                background: var(--claro-fondos);
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .init2 hr {
+                margin: auto;
+                width: 80%;
+            }
+            .init2 > a {
+                width: 100%;
+            }
+            .init2 h2 {
+                font-size: 1.2em;
+                margin: 1% 20%;
+            }
+            .init2 h2 {
+                text-transform: uppercase;
+            }
+            .init2 h2 > img {
+                margin-right: 25px;
+            }
+
+    /* --- 3.3 DE QUE SE TRATA --- */
+    .article2 {
+        background: var(--oscuro-menus);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:    "que-trata  que-trata  trata-foto-1";
+        color: var(--claro-letras);
+        place-items: center;
+    }
+    .que-trata {
+        grid-area: que-trata;
+    }
+    .trata-foto-1 {
+        grid-area: trata-foto-1;
+        height: 100%;
+        width: 100%;
+        background: url('../Fotos/chefs/emm3.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    @media (min-width:768px) and (max-width:992px) {
+        .trata-foto-1 {
+            background: url('../Fotos/chefs/emma1.jpeg');
+            background-position: center;
+            background-size: cover;
+        }
+    }
+    .que-trata {
+        padding: 2%;
+        font-size: 1.2em;
+        line-height: 1.5;
+        letter-spacing: 1.3;
+        word-spacing: 2px;
+    }
+    .que-trata p {
+        margin: 0.8em;
+    }
+        /* - 3.3.1 CITA - */
+        .cita {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        blockquote {
+            color: var(--claro-letras);
+            font-family: 'Special Elite', cursive;
+            font-weight: 100;
+            font-size: 1.8rem;
+            max-width: 75%;
+            line-height: 1.4;
+            position: relative;
+            margin: 0;
+            padding: .5rem;
+        }
+        blockquote:before,
+        blockquote:after {
+            position: absolute;
+            color: var(--claro-letras);
+            font-size: 8rem;
+            width: 4rem;
+            height: 4rem;
+        }
+
+        blockquote:before {
+            content: '“';
+            left: -5rem;
+            top: -2rem;
+        }
+
+        blockquote:after {
+            content: '”';
+            right: -5rem;
+            bottom: 1rem;
+        }
+        cite {
+            font-family: 'Special Elite', cursive;
+            font-size: 1.6rem;
+            line-height: 3;
+            text-align: right;
+        }
+    @media (min-width:0px) and (max-width:767px) {
+        .article2{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: "que-trata";
+        }
+        .trata-foto-1 {
+            display: none;
+        }
+        blockquote {
+            font-size: 1.2em;
+        }
+        cite {
+            font-size: 1.1em;
+        }
+        .que-trata {
+            font-size: 1em;
+        }
+    }
+
+    /* --- 3.4 NUESTROS CHEFS --- */
+    .grid-cocinero, .grid-cocinero2 {
+        display: grid;
+        grid-template-rows: auto;
+        margin: 20px;
+        column-gap: 2%;
+        background: var(--claro-fondos);
+        padding: 0.8%;
+        border-radius: 1%;
+    }
+    .grid-cocinero {
+        grid-template-columns: 2fr 4fr;
+        grid-template-areas:    "titulo-cocinero  titulo-cocinero"
+                                "foto-cocinero    recetas-cocinero"
+                                "texto-cocinero   recetas-cocinero";
+    }
+    .grid-cocinero2 {
+        grid-template-columns: 4fr 2fr;
+        grid-template-areas:    "titulo-cocinero   titulo-cocinero"
+                                "recetas-cocinero  foto-cocinero"
+                                "recetas-cocinero  texto-cocinero";
+    }
+    .grid-cocinero a:hover, .grid-cocinero2 a:hover {
+        color: rgb(85, 0, 221);
+    }
+    .titulo-chefs {
+       text-align: center;
+       font-size: 2em;
+       margin: 2%;
+    }
+    .titulo-cocinero {
+        grid-area: titulo-cocinero;
+        text-align: center;
+        border-bottom: 0.1em dashed black;
+    }
+    .titulo-cocinero h2 {
+        margin: 2%;
+    }
+    .texto-cocinero {
+        grid-area: texto-cocinero;
+        padding: 1%;
+        font-size: 1.3em;
+    }
+    .foto-cocinero {
+        grid-area: foto-cocinero;
+        padding: 5%;
+    }
+    .foto-cocinero > img {
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 0 0 50px black;
+        margin-top: 3%;
+    }
+    .cocinero-svg, .cocinero-svg-punta {
+        margin: 0 4% -0.5em 4%;
+    }
+    /* TABLET */
+    @media (min-width:767px) and (max-width:1217px) {
+        .cocinero-svg-punta {
+            display: none;
+        }
+        .grid-cocinero {
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "titulo-cocinero  titulo-cocinero"
+                                    "foto-cocinero    texto-cocinero"
+                                    "recetas-cocinero recetas-cocinero";
+        }
+        .grid-cocinero2 {
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "titulo-cocinero  titulo-cocinero"
+                                    "foto-cocinero    texto-cocinero"
+                                    "recetas-cocinero recetas-cocinero";
+        }
+        .texto-cocinero {
+            font-size: 1.2em;
+        }
+    }
+    /* MOBILE */
+    @media (min-width:0px) and (max-width:767px) {
+        .cocinero-svg, .cocinero-svg-punta {
+            display: none;
+        }
+        .grid-cocinero {
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "titulo-cocinero  titulo-cocinero"
+                                    "foto-cocinero    texto-cocinero"
+                                    "recetas-cocinero recetas-cocinero";
+        }
+        .grid-cocinero2 {
+            display: grid;
+            grid-template-columns: 2fr 4fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "titulo-cocinero  titulo-cocinero"
+                                    "foto-cocinero    texto-cocinero"
+                                    "recetas-cocinero recetas-cocinero";
+        }
+        .texto-cocinero {
+            font-size: 1em;
+        }
+    }
+        /* 3.4.1 SUS RECETAS */
+        .recetas-cocinero {
+            grid-area: recetas-cocinero;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "sus-entradas   sus-carnes   sus-panes"
+                                    "sus-tartas     sus-recetas  sus-guisos"
+                                    "sus-vegetales  sus-salsas   sus-postres";
+            gap: 5%;
+            margin: 2%;
+            padding: 2%;
+        }
+        .sus-recetas{
+            grid-area: sus-recetas;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.7em;
+            margin-top: 10%;
+            border-top: 2px dashed black;
+            border-bottom: 2px dashed black;
+        }
+        .sus-entradas{
+            grid-area: sus-entradas;
+        }
+        .sus-panes{
+            grid-area: sus-panes;
+        }
+        .sus-tartas{
+            grid-area: sus-tartas;
+        }
+        .sus-carnes{
+            grid-area: sus-carnes;
+        }
+        .sus-guisos{
+            grid-area: sus-guisos;
+        }
+        .sus-vegetales{
+            grid-area: sus-vegetales;
+        }
+        .sus-salsas{
+            grid-area: sus-salsas;
+        }
+        .sus-postres{
+            grid-area: sus-postres;
+        }
+        .recetas-cocinero ul {
+            list-style: square;
+            padding: 0;
+            line-height: 1.5;
+        }
+        @media (min-width:0px) and (max-width:767px) {
+            .recetas-cocinero {
+                grid-area: recetas-cocinero;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                grid-template-areas:    "sus-recetas  sus-recetas"
+                                        "sus-entradas sus-panes"
+                                        "sus-tartas   sus-carnes   "
+                                        "sus-guisos   sus-vegetales  "
+                                        "sus-salsas   sus-postres";
+                gap: 2%;
+                margin: 2%;
+                padding: 2%;
+            }
+        }
+
+
+
+/* ------
+4. SVG's 
+--------*/
+
+    .sm-svg {
+        width: 20px;
+        height: auto;
+    }
+    .md-svg {
+        width: 50px;
+        height: auto;
+    }
+    .lg-svg {
+        width: 70px;
+        height: auto;
+    }
+
+/* ----------- 
+5. GRID LAYOUT 
+------------ */
+
+    /* --- 5.1 DESKTOP --- */
+
+    /* BODY */
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10vh 90vh auto auto auto;
+        grid-template-areas:    "header" 
+                                "article"
+                                "init2"
+                                "article2"
+                                "article3"
+                                "article4";
+    }
+    .article2 {
+        grid-area: article2;
+    }
+    .article3 {
+        grid-area: article3;
+    }
+    .article4 {
+        grid-area: article4;
+    }
+    .init2 {
+        display: none;
+    }
+
+    /* PRINCIPAL */
+    .init {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:    "entradas-snacks panes tartas-pastas carnes"
+                                "guisos-sopas vegetariano salsas postres";
+    }
+    .entradas-snacks {
+        grid-area: entradas-snacks;
+    }
+    .panes {
+        grid-area: panes;
+    }
+    .tartas-pastas {
+        grid-area: tartas-pastas;
+    }
+    .carnes {
+        grid-area: carnes;
+    }
+    .guisos-sopas {
+        grid-area: guisos-sopas;
+    }
+    .vegetariano {
+        grid-area: vegetariano;
+    }
+    .salsas {
+        grid-area: salsas;
+    }
+    .postres {
+        grid-area: postres;
+    }
+
+    /* --- 5.2 GRID LAYOUT TABLET --- */
+
+    @media (min-width:768px) and (max-width:992px) {
+        body {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "header" 
+                                    "article" 
+                                    "init2"
+                                    "article2"
+                                    "article3"
+                                    "article4";
+        }
+        .init {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:    "entradas-snacks panes"
+                                    "tartas-pastas carnes"
+                                    "guisos-sopas vegetariano" 
+                                    "salsas postres";
+            margin: 1%;
+        }
+        .init2 {
+            display: none;
+        }
+    }
+
+    /* --- 5.3 GRID LAYOUT MOBILE --- */
+
+    @media (min-width:0px) and (max-width:767px) {
+        body {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "header" 
+                                    "article" 
+                                    "init2"
+                                    "article2"
+                                    "article3"
+                                    "article4";
+            
+        }
+        .init2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas:    "entradas-snacks"
+                                    "panes" 
+                                    "tartas-pastas" 
+                                    "carnes"
+                                    "guisos-sopas" 
+                                    "vegetariano" 
+                                    "salsas" 
+                                    "postres";
+            margin: 2%;
+        }
+        .init2 {
+            grid-area: init2;
+        }
+        .init {
+            display: none;
+        }
+    }
+

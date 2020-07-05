@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
     <title>El Recetario</title>
     <link rel="icon" type="image/svg+xml" href="Icons/chef-hat.svg">
 </head>
@@ -32,7 +32,7 @@
                 <hr>
                 <a href="#3"><li>Nuestros Chefs</li></a>
                 <hr>
-                <a href="todo-sobre.html"></li>Todo sobre</li></a>
+                <a href="todo-sobre.html"><li>Todo sobre</li></a>
             </ul>
         </div>  
 
@@ -157,7 +157,7 @@
             </div>
             <br>
             <br>
-            <h2 style="font-family: 'Nunito', sans-serif;">De que se trata</h2>
+            <h2 style="font-family: 'Nunito', sans-serif;">¿De que se trata?</h2>
             <p>Somos una familia de nueve formada por cuatro parejas y una reinita. En esta familia no solo nos encanta comer rico sino que además 
                 disfrutamos mucho de la cocina. Cocinar hace bien, y compartirlo con los que más querés siempre es la mejor parte.</p>
             <p>Creamos esta página para poder subir, compartir, consultar y preparar los platos y postres que más nos gustan, y poder 
@@ -168,12 +168,13 @@
             <p>BIENVENIDOS AL RECETARIO!</p>
         </div>
         <div class="trata-foto-1">
-            <img src="Fotos/chefs/emm3.jpg">
+
         </div>
     </div>
+
     <!----- NUESTROS CHEFS ----->
     <div class="article3" id="3">
-        <h2 class="titulo-chefs">Nuestros chefs</h2>
+        <h2 class="titulo-chefs">NUESTROS CHEFS</h2>
         <div class="grid-cocinero" id="4">
             <div class="titulo-cocinero">
                 <h2>
@@ -443,75 +444,8 @@
             </div>
         </div>
     </div>
-    <!-- FORM RECETAS -->
-    <div class="article4">
-        <div class="form-foto">
-            <img src="Fotos/chefs/emma2.jpeg">
-        </div>
-        <div class="form-receta">
-            <form action="https://formspree.io/mtimistit@ius.austral.edu.ar" method="POST">
-                <ul>
-                    <li>
-                        <label for="chef" class="titulo-campo">Chef:</label>
-                        <select name="Chef" class="campo" id="chef"> 
-                            <option value="Andy y Nuni">Andy y Nuni</option>
-                            <option value="Agus y Tom">Tom y Agus</option>
-                            <option value="Mogui y Nano">Mogui y Nano</option>
-                            <option value="Pilu y Robert">Pilu y Robert</option>
-                        </select>
-                        <label for="nombre-receta" style="margin-left: 2%;">Nombre Receta</label>
-                        <input type="text" name="Nombre Receta" id="nombre-receta" required>
-                    </li>
-                    <li>
-                        <label for="ingredientes-form" class="titulo-campo">Ingredientes:</label>
-                    </li>
-                    <li>
-                        <textarea id="ingredientes-form" name="Ingredientes"></textarea>
-                    </li>
-                    <li>
-                        <label for="preparacion-form" class="titulo-campo">Preparación:</label>   
-                    </li>
-                    <li>
-                        <textarea id="preparacion-form" name="Preparación"></textarea>            
-                    </li>
-                    <li>
-                        <label for="tips-form" class="titulo-campo">Tips:</label>
-                    </li>
-                    <li>
-                        <textarea id="tips-form" name="Tips"></textarea>
-                    </li>
-                    <li>
-                        <button type="submit">Mandanos tu receta!</button>
-                    </li>
-                </ul>
-            </form>
-        </div>
-    </div>
+
     <script src="script-index.js"></script>
-    <!-------------------------------- FIREBASE -------------------------------->
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
-
-    <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-        apiKey: "AIzaSyA7ZK7UMYNKP_9-9OJI8VSkinxLR6PrC9U",
-        authDomain: "elrecetario.firebaseapp.com",
-        databaseURL: "https://elrecetario.firebaseio.com",
-        projectId: "elrecetario",
-        storageBucket: "elrecetario.appspot.com",
-        messagingSenderId: "221801931462",
-        appId: "1:221801931462:web:2bab77a0656e7b4e366dc7",
-        measurementId: "G-DFF4PHY0QE"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    </script>
 
 </body>
 </html>
