@@ -1,0 +1,209 @@
+    /* TABLA DE CONTENIDOS 
+    1. SPECIFIC GRID LAYOUT
+    2. SVG's
+    3. RECETAS
+    */
+
+
+/* ----------------
+1. SPECIFIC GRID LAYOUT
+-------------------*/
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:    "header" 
+                            "article";
+}
+
+
+
+/* ------
+2. SVG's 
+--------*/
+
+.sm-svg {
+    width: 20px;
+    height: auto;
+    margin: 15px 15px -5px 15px;
+}
+.md-svg {
+    width: 50px;
+    height: auto;
+    margin: 15px 15px -10px 15px;
+}
+.lg-svg {
+    width: 70px;
+    height: auto;
+    margin: 15px 15px -15px 15px;
+}
+
+
+
+/* -------- 
+3. RECETAS 
+--------- */
+
+    /* GRID  DESKTOP*/
+    .receta {
+        text-align: center;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+        grid-template-rows: auto;
+        grid-template-areas:    "titulo-receta titulo-receta  rinde"
+                                "ingredientes  pasos          pasos"
+                                "tips          pasos          pasos";
+                                
+        gap: 7px;
+        margin: 4% 6%;
+        padding: 10px;
+        background: rgb(56, 54, 54);
+        border-radius: 1%;
+    }
+    .titulo-receta {
+        grid-area: titulo-receta;
+        background: rgb(240, 238, 238);
+        padding: 4%;
+    }
+    .rinde {
+        grid-area: rinde;
+        background: rgb(240, 238, 238);
+
+    }
+    .ingredientes {
+        grid-area: ingredientes;
+        background: rgb(240, 238, 238);
+        padding: 4%;
+    }
+    .pasos {
+        grid-area: pasos;
+        background: rgb(240, 238, 238);
+        padding: 4%;
+    }
+    .tips {
+        grid-area: tips;
+        background: rgb(240, 238, 238);
+        padding: 4%;
+    }
+
+    /* GRID MOBILE */
+    @media (min-width:0px) and (max-width:767px) {
+        .receta {
+            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:    "titulo-receta"
+                                    "rinde"
+                                    "ingredientes" 
+                                    "pasos"
+                                    "tips";
+            gap: 0.;
+            margin: 4% 1%;
+            padding: 1%;
+            border-radius: 1%;
+        }
+        .foto-receta {
+            display: none;
+        }
+    }
+
+    /* RECETA */
+    .receta a:hover {
+        color: rgb(85, 0, 221);
+    }
+    .receta {
+        font-size: 1.1em;
+    }
+    .receta h2 {
+        color: rgb(219, 124, 47);
+    }
+    .receta p {
+        margin: 30px 0;
+        text-align: justify;
+    }
+    .svg {
+        cursor: pointer;
+    }
+
+    /* TÍTULO RECETA*/
+    .titulo-receta h2 {
+        font-size: 2.5em;
+        margin: 10px;
+    }
+    @media (min-width:0px) and (max-width:767px) {
+        .titulo-receta h2 {
+            font-size: 1.5em;
+
+        }
+        .titulo-receta h3 {
+            font-size: 1em;
+        }
+    }
+
+    /* RINDE */
+    .rinde {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 4%;
+    }
+    .rinde img {
+        margin-right: 10px;
+    }
+    .rinde h4 {
+        text-align: left;
+    }
+    .compartir {
+        background: var(--oscuro-menus);
+        color: var(--claro-letras);
+        border: 1px solid black; 
+        border-radius: 100px;
+        width: 150px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .compartir:hover {
+        cursor: pointer;
+    }
+    .compartir:active {
+        background: red;
+    }
+
+
+
+    /* TABLA INGREDIENTES */
+    table {
+        width: 90%;
+        margin: 10% 5%;
+        border-collapse: collapse;
+    }
+    td, th {
+        border-bottom: 1px solid black;
+        padding: 1%;
+    }
+    tr:nth-child(odd) {
+        background-color: rgb(219, 219, 219);
+    }
+    tr:hover {
+        opacity: 0.8;
+    }
+
+    /* PREPARACIÓN */
+    .pasos > p {
+        text-align: left;
+        line-height: 1.4;
+        letter-spacing: 1.2;
+        word-spacing: 1px;
+    }
+    .pasos h2 {
+        margin: 10px 0 50px 0;
+        font-size: 2em;
+    }
+
+
+
