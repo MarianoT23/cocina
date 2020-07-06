@@ -3,125 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <link rel="stylesheet" href="css/stylesheet-recetas.css">
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/stylesheet-recetas.css">
     <title>SALSAS</title>
-    <link rel="icon" type="image/svg+xml" href="Icons/lemon.svg">
+    <link rel="icon" type="image/svg+xml" href="../Icons/lemon.svg">
 </head>
 <body>
     <!----- HEADER ----->
     <header>
         <!-- LOGO -->
-        <a href="index.html" class="logo"><div>
+        <a href="../index.html" class="logo"><div>
             <h2>El Recetario</h2>
         </div></a>
         <!-- DESKTOP NAV (sólo se muestra en compu)-->
         <nav>
             <ul>
-                <li><a href="entradas-snacks.html">ENTRADAS / GUARNICIONES</a></li>
-                <li><a href="panes.html">PANES</a></li>
-                <li><a href="tartas-pastas.html">TARTAS / PASTAS</a></li>
-                <li><a href="carnes.html">CARNES</a></li>
-                <li><a href="guisos-sopas.html">GUISOS / SOPAS</a></li>
-                <li><a href="vegetariano.html">VEGETALES</a></li>
+                <li><a href="../EntradasYGuarniciones/entradas-snacks.html">ENTRADAS / GUARNICIONES</a></li>
+                <li><a href="../Panes/panes.html">PANES</a></li>
+                <li><a href="../TartasYPastas/tartas-pastas.html">TARTAS Y PASTAS</a></li>
+                <li><a href="../Carnes/carnes.html">CARNES</a></li>
+                <li><a href="../GuisosYSopas/guisos-sopas.html">GUISOS Y SOPAS</a></li>
+                <li><a href="../Vegetales/vegetariano.html">VEGETALES</a></li>
                 <li><a href="salsas.html">SALSAS</a></li>
-                <li><a href="postres.html">POSTRES</a></li>
+                <li><a href="../Postres/postres.html">POSTRES</a></li>
             </ul>
         </nav>
         <!-- TABLET Y MOBILE NAV -->
-        <div class="hamb-menu" onclick="hambMenu();">
-            <div class="hamb-boton"></div>
+        <div id="hamb-menu" onclick="hambMenu();">
+            <div id="hamb-boton"></div>
          </div>
          <div id="mini-nav">
              <ul>
-                 <a href="entradas-snacks.html"><li>ENTRADAS / GUARNICIONES</li></a>
+                 <a href="../EntradasYGuarniciones/entradas-snacks.html"><li>ENTRADAS / GUARNICIONES</li></a>
                  <hr>
-                 <a href="panes.html"><li>PANES</a></li>
+                 <a href="../Panes/panes.html"><li>PANES</a></li>
                  <hr>
-                 <a href="tartas-pastas.html"><li>TARTAS / PASTAS</li></a>
+                 <a href="../TartasYPastas/tartas-pastas.html"><li>TARTAS / PASTAS</li></a>
                  <hr>
-                 <a href="carnes.html"><li>CARNES</li></a>
+                 <a href="../Carnes/carnes.html"><li>CARNES</li></a>
                  <hr>
-                 <a href="guisos-sopas.html"><li>GUISOS / SOPAS</li></a>
+                 <a href="../GuisosYSopas/guisos-sopas.html"><li>GUISOS / SOPAS</li></a>
                  <hr>
-                 <a href="vegetariano.html"><li>VEGETALES</li></a>
+                 <a href="../Vegetales/vegetariano.html"><li>VEGETALES</li></a>
                  <hr>
                  <a href="salsas.html"><li>SALSAS</li></a>
                  <hr>
-                 <a href="postres.html"><li>POSTRES</li></a>
+                 <a href="../Postres/postres.html"><li>POSTRES</li></a>
              </ul>
          </div>  
     </header>
         
     <article>
+
         <!----- MENU RECETAS ----->
         <div class="menu-receta">
             <!-- VINAGRETA DE MOSTAZA Y MIEL -->
             <div class="carta-receta">
-                <div><img src="Fotos/salsas/vinagreta-mostaza.jpg" alt="Vinagreta de Mostaza y Miel"></div>
+                <div><img src="../Fotos/salsas/vinagreta-mostaza.jpg" alt="Vinagreta de Mostaza y Miel"></div>
                 <div class="titulo-carta">
                     <h3>VINAGRETA DE MOSTAZA Y MIEL</h3>
-                    <h5><img src="Icons/chef-hat.svg" class="sm-svg">&nbsp;&nbsp;Mogui y Nano</h5>
+                    <h5><img src="../Icons/chef-hat.svg" class="sm-svg">&nbsp;&nbsp;Mogui y Nano</h5>
                 </div>
-                    <a href="#vinagreta-mostaza-miel">
+                    <a href="vinagreta-mostaza-miel.html">
                         <div class="boton-carta">A cocinar!</div>
                     </a> 
             </div>
         </div>
 
-        <!----- RECETAS ----->
-        <!-- VINAGRETA DE MOSTAZA Y MIEL -->
-        <div class="receta" id="vinagreta-mostaza-miel"> 
-            <div class="titulo-receta">
-                <h2>VINAGRETA DE MOSTAZA Y MIEL</h2>
-                <h3><u>Receta by</u>:&nbsp;&nbsp;<a href="index.html#6">Mogui y Nano</a></h3>
-            </div>
-            <div class="rinde">
-                <h4><img src="Icons/timer.svg" class="sm-svg">Tiempo:</h4>
-                <ul>
-                </ul>
-                <h4><img src="Icons/rinde.svg" class="sm-svg"> Rinde:</h4>
-            </div>
-            <div class="ingredientes">
-                <h2>Ingredientes &nbsp;&nbsp;<img src="Icons/scale.svg" class="md-svg"></h2>
-                <table>
-                    <tr>
-                        <td>Aceite de Oliva</td>
-                        <td>5 cdas.</td>
-                    </tr>
-                    <tr>
-                        <td>Mostaza</td>
-                        <td>3 cdas.</td>
-                    </tr>
-                    <tr>
-                        <td>Miel</td>
-                        <td>2 cdas.</td>
-                    </tr>
-                    <tr>
-                        <td>Jugo de Limón ó Vinagre de alcohol</td>
-                        <td>2 cdtas.</td>
-                    </tr>
-                    <tr>
-                        <td>Sal y pimienta</td>
-                        <td>apenitas</td>
-                    </tr>
-                    <tr>
-                                
-                </table>
-            </div>
-            <div class="pasos">
-                <h2>Preparación</h2>
-                <p><img src="Icons/blender.svg" class="md-svg" style="float: left;"> Primero mezclamos la mostaza y la miel para que se homogenizen y se corten lo menos posible. 
-                Después incorporamos los líquidos, sal y pimienta. </p>       
-            </div>
-            <div class="tips">
-                <h2><img src="Icons/chef.svg" class="md-svg">&nbsp;&nbsp;Mogui Tip</h2>
-                <p>Es ideal para acompañar ensaladas de hojas verdes, o con palta y panceta.</p>
-            </div>
-        </div>
+    </article>
 
     <img src="Icons/chevron-double-up.svg" onclick="topFunction()" id="myBtn" title="Go to top" >
-    <script src="script-recetas.js"></script>
+    <script src="../JS/script-recetas.js"></script>
+
 </body>
 </html>
 
