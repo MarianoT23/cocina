@@ -130,7 +130,7 @@ a {
                 0% {opacity: 0; transform: translateY(-15px);}
                 100% {opacity: 1; transform: translateY(0);}
             }
-            nav, .logo, .hamb-menu, .init {
+            nav, .logo, #hamb-menu, .init {
                 animation-name: nav-fade-in;
                 animation-duration: 1s;
             }
