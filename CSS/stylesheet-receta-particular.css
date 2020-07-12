@@ -41,7 +41,23 @@ body {
     height: auto;
     margin: 15px 15px -15px 15px;
 }
-
+@media (max-width: 767px) {
+    .sm-svg {
+        width: 20px;
+        height: auto;
+        margin: 8px 8px -3px 8px;
+    }
+    .md-svg {
+        width: 40px;
+        height: auto;
+        margin: 8px 8px -5px 8px;
+    }
+    .lg-svg {
+        width: 55px;
+        height: auto;
+        margin: 8px 8px -8px 8px;
+    }   
+}
 
 
 /* -------- 
@@ -60,34 +76,29 @@ body {
                                 
         gap: 7px;
         margin: 4% 6%;
-        padding: 10px;
+        padding: 7px;
         background: rgb(56, 54, 54);
-        border-radius: 1%;
+        border-radius: 7px;
+    }
+    .receta > div {
+        border-radius: 7px;
+        background: var(--claro-fondos);
+        padding: 4%;
     }
     .titulo-receta {
         grid-area: titulo-receta;
-        background: rgb(240, 238, 238);
-        padding: 4%;
     }
     .rinde {
         grid-area: rinde;
-        background: rgb(240, 238, 238);
-
     }
     .ingredientes {
         grid-area: ingredientes;
-        background: rgb(240, 238, 238);
-        padding: 4%;
     }
     .pasos {
         grid-area: pasos;
-        background: rgb(240, 238, 238);
-        padding: 4%;
     }
     .tips {
         grid-area: tips;
-        background: rgb(240, 238, 238);
-        padding: 4%;
     }
 
     /* GRID MOBILE */
@@ -102,13 +113,10 @@ body {
                                     "ingredientes" 
                                     "pasos"
                                     "tips";
-            gap: 0.;
+            gap: 3px;
             margin: 4% 1%;
-            padding: 1%;
-            border-radius: 1%;
-        }
-        .foto-receta {
-            display: none;
+            padding: 6px;
+            border-radius: 6px;
         }
     }
 
@@ -128,6 +136,14 @@ body {
     }
     .svg {
         cursor: pointer;
+    }
+    @media (min-width:0px) and (max-width:767px) {
+        .receta {
+            font-size: 0.9em;
+        }  
+        .receta p {
+            margin: 15px 0;
+        }  
     }
 
     /* TÍTULO RECETA*/
@@ -150,7 +166,6 @@ body {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        padding: 4%;
     }
     .rinde img {
         margin-right: 10px;
@@ -162,9 +177,10 @@ body {
         background: var(--oscuro-menus);
         color: var(--claro-letras);
         border: 1px solid black; 
-        border-radius: 100px;
+        border-radius: 50px;
         width: 150px;
         height: 50px;
+        font-size: 16px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -176,8 +192,6 @@ body {
     .compartir:active {
         background: red;
     }
-
-
 
     /* TABLA INGREDIENTES */
     table {
@@ -208,6 +222,7 @@ body {
         font-size: 2em;
     }
 
+    /* SIDE NAV */
     .side-nav {
         margin: 10%;
     }

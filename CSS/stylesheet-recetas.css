@@ -1,9 +1,11 @@
     /* TABLA DE CONTENIDOS 
     1. SPECIFIC GRID LAYOUT
-    2. SVG's
-    3. HEADER
-    4. NAV RECETAS
-    5. RECETAS
+    2. HEADER
+        2.1 GENERAL
+        2.2 LOGO
+        2.3 NAV
+            2.3.1 NAV TABLET Y MOBILE
+    3. NAV RECETAS
     */
 
 
@@ -21,14 +23,10 @@ body {
                             "article";
 }
 
-article {
-    background: white;
-}
-
 /* ------- 
-3. HEADER
+2. HEADER
 -------- */
-    /* --- 3.1 HEADER --- */
+    /* --- 2.1 GENERAL --- */
     header {
         background: rgb(56, 54, 54);
         color: #f1efe6;
@@ -46,12 +44,11 @@ article {
     #mini-nav {
         display: none;
     }
-    /* 3.1 LOGO */
+    /* 2.2 LOGO */
     .logo {
-        font-size: large;
         font-size: 1.3em;
     }
-    /* 3.2 NAV */
+    /* 2.3 NAV */
     nav {
         list-style: none;
         width: 100%;
@@ -60,11 +57,6 @@ article {
         justify-content: center;
         text-align: center;
     }
-    nav > ul {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
     nav li {
         display: inline-block;
         padding: 10px 0 2% 0;
@@ -72,24 +64,7 @@ article {
 
         position: relative;
     }
-        /* 3.2.1 NAV ANIMATION */
-        nav > ul > li > a::before {
-            content: "";
-            display: block;
-            height: 5px;
-            width: 100%;
-            background-color: white;
-
-            position: absolute;
-            top: 0;
-            width: 0%;
-            
-            transition: all ease-in-out 300ms;
-        }
-        nav > ul > li > a:hover::before {
-            width: 100%;
-        }
-        /* 3.2.2 NAV TABLET Y MOBILE */
+        /* 2.3.1 NAV TABLET Y MOBILE */
         @media (min-width:0px) and (max-width:1216px) {
             nav {
                 display: none;
@@ -110,48 +85,7 @@ article {
             #mini-nav {
                 grid-area: mini-nav;
             }
-            /* HAMBURGER MENU */
-            .hamb-menu {
-                display: block;
-                width: 60px;
-                height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .hamb-menu:hover {
-                background-color: grey;
-            }
-            .hamb-boton {
-                position: relative; 
-                background-color: white;
-                width: 60%; 
-                height: 2px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .hamb-boton:before,
-            .hamb-boton:after {
-                content: '';
-                position: absolute;
-                top: -10px;
-                background-color: white; 
-                width: 100%; 
-                height: 2px;
-            }
-            .hamb-boton:after {
-                position: absolute;
-                top: 10px;
-                background-color: white; 
-                width: 100%; 
-                height: 2px;
-            }
             /* MINI NAV */
-            #mini-nav {
-                display: none;
-                width: 100%;
-            }
             #mini-nav hr {
                 width: 30%;
             }
@@ -167,15 +101,12 @@ article {
                 width: 100%;
                 padding: 5px;
             }
-            #mini-nav  li:hover {
-                background-color: gray;
-            }
         }
 
 
 
 /* -----------
-4. NAV RECETAS 
+3. NAV RECETAS 
 ------------ */
 
 .menu-receta {
@@ -196,7 +127,7 @@ article {
     height: 170px;
 }
 .carta-receta > a {
-    color: white;
+    color: var(--claro-letras);
 }
 .titulo-carta {
     text-align: left;
@@ -205,11 +136,9 @@ article {
 }
 .titulo-carta h3 {
     margin-top: 10px;
-    margin-bottom: 0;
 }
 .titulo-carta h5, .titulo-carta .sm-svg {
     margin-top: 5px;
-    margin-right: 0;
 }
 .boton-carta {
     text-transform: uppercase;
